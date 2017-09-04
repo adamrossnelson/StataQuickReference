@@ -18,6 +18,8 @@ net install gr0002_3, from(http://www.stata-journal.com/software/sj4-3)
 	scalar sstr1 = "#include s2mono"
 	// Build rstr1 replacement string.
 	scalar rstr1 = "// Contributor: Adam Ross Nelson; modification - Specified graphysize y to reduce graph height." + ///
+	char(13) + char(10) + "more info at: https://github.com/adamrossnelson/StataQuickReference/blob/master/GetStataSchemes.do and ..." + ///
+	char(13) + char(10) + "https://github.com/adamrossnelson/StataQuickReference" + ///
 	char(13) + char(10) + char(13) + char(10) + "#include s2mono"
 	// Find sstr1 and replace with rstr1.
 	// Document the edits / revisions to the file.
