@@ -4,6 +4,6 @@ clear all
 
 // Load example data
 
-
+use
 
 // 
