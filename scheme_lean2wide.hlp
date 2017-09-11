@@ -1,0 +1,39 @@
+{smcl}
+{* 17apr2003}{...}
+{hline}
+help for {hi:scheme_lean2}{right:(SJ3-3: gr0002; SJ4-1: gr0002_1; SJ4-2: gr0002_2; SJ4-3: gr0002_3)}
+{hline}
+
+{* index schemes}{...}
+{title:Scheme description:  lean2wide}
+
+{p 4 4 2}
+The Lean2Wide scheme is a derivitive of {cmd:help scheme_lean2} scheme.
+
+{title:Description}
+
+{p 4 4 2}
+The Lead2Wide scheme is a modification of Lean2. The wide aspect ratio leaves Lean2's x width at 6in. And reduces the y height to 3in. This scheme provides a shape that works well for showing trends over time and that fits well on standard 8.5x11 portrait oriented documents.
+
+{title:Author of Lean2Wide}
+
+{p 4 4 2}
+Adam Ross Nelson, University of Wisconsin - Madison
+
+
+{title:Author of Lean, Lean1, & Lean2}
+
+{p 4 4 2}
+{browse "mailto:sj@soci.au.dk":Svend Juul}, Department of Epidemiology and Social Medicine,
+University of Aarhus, Denmark.
+
+
+{title:Also see}
+
+{p 4 14 2}
+Online:  help for {help schemes};
+{it:{help scheme_option}},
+{help set_scheme}
+{p_end}
+
+
