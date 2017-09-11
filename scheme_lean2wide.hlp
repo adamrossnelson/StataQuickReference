@@ -8,7 +8,7 @@ help for {hi:scheme_lean2}{right:(SJ3-3: gr0002; SJ4-1: gr0002_1; SJ4-2: gr0002_
 {title:Scheme description:  lean2wide}
 
 {p 4 4 2}
-The Lean2Wide scheme is a derivitive of {cmd:help scheme_lean2} scheme.
+The Lean2Wide scheme is a derivitive of {help scheme_lean2} scheme.
 
 {title:Description}
 
