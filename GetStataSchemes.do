@@ -2,6 +2,8 @@
 // Author: Adam Ross Nelson @adamrossnelson
 // Original version: September 2017
 
+set more off
+
 // Standard schemes available from ssc.
 ssc install blindschemes, replace
 ssc install scheme-burd, replace
