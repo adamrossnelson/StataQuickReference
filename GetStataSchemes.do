@@ -16,7 +16,7 @@ net install gr0002_3, from(http://www.stata-journal.com/software/sj4-3) replace
 	// Open Svend Juul's "Lean2" Scheme into scalar schemecontents.
 	// For non-default installations or for IOS, revise path to "scheme-lean2.scheme"
 	// scalar schemecontents = fileread("C:\ado\plus\s\scheme-lean2.scheme")
-	scalar schemecontents = fileread("`c(sysdir_plus)'s\scheme-lean2.scheme")
+	scalar schemecontents = fileread("`c(sysdir_plus)'s/scheme-lean2.scheme")
 	// Build sstr1 search string.
 	scalar sstr1 = "#include s2mono"
 	// Build rstr1 replacement string.
@@ -39,7 +39,7 @@ net install gr0002_3, from(http://www.stata-journal.com/software/sj4-3) replace
 
 	// Save new scheme "scheme-lean2wide.scheme"
 	// scalar byteswritten = filewrite("C:\ado\plus\s\scheme-lean2wide.scheme", schemecontents, 1)
-	scalar byteswritten = filewrite("`c(sysdir_plus)'s\scheme-lean2wide.scheme", schemecontents, 1)
+	scalar byteswritten = filewrite("`c(sysdir_plus)'s/scheme-lean2wide.scheme", schemecontents, 1)
 
 // Copy Lean2Wide help documentation.
 copy "https://raw.githubusercontent.com/adamrossnelson/StataQuickReference/master/scheme_lean2wide.hlp" ///
