@@ -35,7 +35,19 @@ To execute from command line:
 do https://raw.githubusercontent.com/adamrossnelson/StataQuickReference/master/GetStataSchemes.do
 ```
 
+## asciiadam.do
+
+Example of a vaity branding splash.
+
+To execute from command line (or do file):
+
+```
+do https://raw.githubusercontent.com/adamrossnelson/StataQuickReference/master/asciiadam.do
+```
+
 ## License
+
+Except where otherwise specifically noted:
 
 MIT License
 
