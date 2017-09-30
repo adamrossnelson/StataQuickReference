@@ -8,7 +8,12 @@ qui {
 	gen x = runiform(.5,1.25) * _n * _n
 	
 	noi di "# GitHub flavored markdown genderated from Stata"
-	noi di "This markdown file was generated from Stata. To demonstrate and test Stata's ability to automate output for display on GitHub. Begin by generating random numbers with a relationship. See original do file `md_demo.do` for demonstrated implementation. Because routine generates dynamic image, must download do file to demonstrate locally."
+	noi di "This markdown file was generated from Stata. To demonstrate and"
+	noi di "test Stata's ability to automate output for display on GitHub."
+	noi di "Begin by generating random numbers with a relationship. See "
+	noi di "original do file `md_demo.do` for demonstrated implementation."
+	noi di "Because routine generates dynamic image, must download do file "
+	noi di "to demonstrate locally."
 	noi di "```"
 	noi di "set obs 10000"
 	noi di "gen y = _n + rnormal(10.10)"
