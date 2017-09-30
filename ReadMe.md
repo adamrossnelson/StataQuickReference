@@ -15,6 +15,14 @@ do https://raw.githubusercontent.com/adamrossnelson/StataQuickReference/master/B
 use https://github.com/adamrossnelson/StataQuickReference/raw/master/ExampleIPEDS.dta
 ```
 
+## renvarnames.do
+
+This do file provides a method to quickly add text to all variable labels. Also provides an example code that can reference existing variable labels which is useful when automating output for graphs or putdoc/pdf, etc.
+```
+// To run from command line:
+do https://raw.githubusercontent.com/adamrossnelson/StataQuickReference/master/renvarnames.do
+```
+
 ## FictionalGPAData.do
 
 Builds a dataset with fictional GPA data. Demonstration of stata random number generators.
@@ -41,7 +49,19 @@ Generates markdown from Stata using `qui` abd `noi di...` Demonstrates and tests
 
 Cannot be run from command line without downloading a local copy.
 
+## asciiadam.do
+
+Example of a vaity branding splash.
+
+To execute from command line (or do file):
+
+```
+do https://raw.githubusercontent.com/adamrossnelson/StataQuickReference/master/asciiadam.do
+```
+
 ## License
+
+Except where otherwise specifically noted:
 
 MIT License
 
