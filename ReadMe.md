@@ -35,6 +35,12 @@ To execute from command line:
 do https://raw.githubusercontent.com/adamrossnelson/StataQuickReference/master/GetStataSchemes.do
 ```
 
+## md_demo.do
+
+Generates markdown from Stata using `qui` abd `noi di...` Demonstrates and tests a method for Stata to automate output for display on GitHub.
+
+Cannot be run from command line without downloading a local copy.
+
 ## License
 
 MIT License
