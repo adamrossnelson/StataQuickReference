@@ -37,3 +37,13 @@ Download and install using `net install <package>, from(https://raw.github.com/b
 Provides a new approach to `reshape`. More information from: https://github.com/matthieugomez/tidy.ado
 
 Download and install using `net install tidy, from(https://github.com/matthieugomez/tidy.ado/raw/master/)`
+
+# Notes about stata schemes.
+
+These notes eventually to be placed in seperate `md` file.
+
+## burd
+
+More information from: https://econpapers.repec.org/software/bocbocode/s457623.htm & https://github.com/briatte/burd which explains:
+
+The burd Stata graph scheme is a reverse implementation of Cynthia Brewer's ColorBrewer `RdBu` diverging color scheme.
