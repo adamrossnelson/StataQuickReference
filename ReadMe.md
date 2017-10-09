@@ -2,6 +2,8 @@
 
 These examples are designed to run from the web. Where possible and where time has permitted these examples are both Mac and Windows compatible. But, no promises.
 
+For a currated list of packages, their descriptions, and links to further documentation see: https://github.com/adamrossnelson/conmtrx/blob/master/usefulpackages.md
+
 Send comments or suggestions via GitHub or Twitter : @adamrossnelson
 
 ## BasicPlotting.do
