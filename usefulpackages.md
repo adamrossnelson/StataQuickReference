@@ -22,3 +22,18 @@ Command that reports summary statistics, including a 2 x 2 table for discrete cl
 Download and install through Stata using `ssc install <classtabi>, replace`
 
 See also: https://github.com/adamrossnelson/conmtrx
+
+## Bradbook & Bradmean
+
+More information from: https://github.com/bbradfield/brad-stata which explains:
+
+* `bradmean` Computes multiple independent means in a single table.
+* `bradbook` Creates a cleaner codebook for export to Word.
+
+Download and install using `net install <package>, from(https://raw.github.com/bbradfield/brad-stata/master/) replace`
+
+## stata-tidy
+
+Provides a new approach to `reshape`. More information from: https://github.com/matthieugomez/tidy.ado
+
+Download and install using `net install tidy, from(https://github.com/matthieugomez/tidy.ado/raw/master/)`
