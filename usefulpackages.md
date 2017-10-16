@@ -1,5 +1,38 @@
 # A list of useful Stata packages.
 
+## Tablecol
+
+`tablecol` has been a lifesaver. Simplifes the production of three way tabulations. Also can provide one and twoway tabulations that are easier to read. Example output:
+
+```
+. use https://github.com/adamrossnelson/StataQuickReference/raw/master/ExampleIPEDS.dta, clear
+
+. tablecol isYr instsize hbcu if instsize > 0 & instsize < 5
+
+
+------------------------------------------------------------------------------
+          |   Historically Black College or University and Institution size   
+          |                              category                             
+          | ------------------------------- Yes ------------------------------
+     isYr |     Under 1,000    1,000 - 4,999    5,000 - 9,999  10,000 - 19,999
+----------+-------------------------------------------------------------------
+     2014 |              25               55               15                4
+     2015 |              31               52               15                3
+     2016 |              31               52               16                2
+------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------
+          |   Historically Black College or University and Institution size   
+          |                              category                             
+          | ------------------------------- No -------------------------------
+     isYr |     Under 1,000    1,000 - 4,999    5,000 - 9,999  10,000 - 19,999
+----------+-------------------------------------------------------------------
+     2014 |           4,811            1,610              489              343
+     2015 |           4,644            1,544              490              333
+     2016 |           4,705            1,501              501              336
+------------------------------------------------------------------------------
+```
+
 ## StataTools
 
 Includes the following:
@@ -40,7 +73,7 @@ Download and install using `net install tidy, from(https://github.com/matthieugo
 
 # Notes about stata schemes.
 
-These notes eventually to be placed in seperate `md` file.
+Stata scheme notes eventually to be placed in seperate `md` file.
 
 ## burd
 

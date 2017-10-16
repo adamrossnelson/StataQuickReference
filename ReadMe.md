@@ -1,4 +1,20 @@
-# Stata Quick Reference
+# 1. Table of Coneents
+
+<!-- TOC -->
+- [1. Table of Coneents](#1-table-of-coneents)
+- [2. Stata Quick Reference](#2-stata-quick-reference)
+    - [2.1. BasicPlotting.do](#21-basicplottingdo)
+    - [2.2. Facradar.do](#22-facradardo)
+    - [2.3. renvarnames.do](#23-renvarnamesdo)
+    - [2.4. FictionalGPAData.do](#24-fictionalgpadatado)
+    - [2.5. GetStataSchemes.do](#25-getstataschemesdo)
+    - [2.6. md_demo.do](#26-mddemodo)
+    - [2.7. asciiadam.do](#27-asciiadamdo)
+- [3. License](#3-license)
+
+<!-- /TOC -->
+
+# 2. Stata Quick Reference
 
 These examples are designed to run from the web. Where possible and where time has permitted these examples are both Mac and Windows compatible. But, no promises.
 
@@ -6,7 +22,7 @@ For a currated list of packages, their descriptions, and links to further docume
 
 Send comments or suggestions via GitHub or Twitter : @adamrossnelson
 
-## BasicPlotting.do
+## 2.1. BasicPlotting.do
 
 Simple graphics using IPEDS data `ExampleIPEDS.dta`
 
@@ -17,7 +33,13 @@ do https://raw.githubusercontent.com/adamrossnelson/StataQuickReference/master/B
 use https://github.com/adamrossnelson/StataQuickReference/raw/master/ExampleIPEDS.dta
 ```
 
-## renvarnames.do
+## 2.2. Facradar.do
+
+Another plotting demonstration. Demonstrates genderating a radar plot. Requires the `radar` package which is available at `http://fmwww.bc.edu/repec/bocode/r/radar.html`. The example given in `radar` documentation shows the package excels at plotting a categorical y (such as automobile make) and a continuous x (automobile weight).
+
+This implementatino plots a categorical y (such as a series of factor scores) and a continuous x (which would be each factor score's mean).
+
+## 2.3. renvarnames.do
 
 This do file provides a method to quickly add text to all variable labels. Also provides an example code that can reference existing variable labels which is useful when automating output for graphs or putdoc/pdf, etc.
 ```
@@ -25,7 +47,7 @@ This do file provides a method to quickly add text to all variable labels. Also 
 do https://raw.githubusercontent.com/adamrossnelson/StataQuickReference/master/renvarnames.do
 ```
 
-## FictionalGPAData.do
+## 2.4. FictionalGPAData.do
 
 Builds a dataset with fictional GPA data. Demonstration of stata random number generators.
 
@@ -33,7 +55,7 @@ Builds a dataset with fictional GPA data. Demonstration of stata random number g
 do https://raw.githubusercontent.com/adamrossnelson/StataQuickReference/master/FictionalGPAData.do
 ```
 
-## GetStataSchemes.do
+## 2.5. GetStataSchemes.do
 
 This file is a quick routine that will install a range of graphic schemes. Graphic schemes are a useful way to improve the visual presentation of data.
 
@@ -45,13 +67,13 @@ To execute from command line:
 do https://raw.githubusercontent.com/adamrossnelson/StataQuickReference/master/GetStataSchemes.do
 ```
 
-## md_demo.do
+## 2.6. md_demo.do
 
 Generates markdown from Stata using `qui` abd `noi di...` Demonstrates and tests a method for Stata to automate output for display on GitHub.
 
 Cannot be run from command line without downloading a local copy.
 
-## asciiadam.do
+## 2.7. asciiadam.do
 
 Example of a vaity branding splash.
 
@@ -61,7 +83,7 @@ To execute from command line (or do file):
 do https://raw.githubusercontent.com/adamrossnelson/StataQuickReference/master/asciiadam.do
 ```
 
-## License
+# 3. License
 
 Except where otherwise specifically noted:
 
