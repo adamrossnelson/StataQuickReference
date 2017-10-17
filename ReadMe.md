@@ -8,7 +8,7 @@
         - [2.1.1. BasicPlotting.do](#211-basicplottingdo)
         - [2.1.2. geoplotipeds.do](#212-geoplotipedsdo)
         - [2.1.3. Facradar.do](#213-facradardo)
-        - [2.2. GetStataSchemes.do](#22-getstataschemesdo)
+        - [2.1.4. GetStataSchemes.do](#22-getstataschemesdo)
     - [2.3. renvarlabs.do](#23-renvarlabsdo)
     - [2.4. FictionalGPAData.do](#24-fictionalgpadatado)
     - [2.5. md_demo.do](#25-mddemodo)
@@ -53,7 +53,7 @@ Another plotting demonstration. Demonstrates genderating a radar plot. Requires 
 
 This implementatino plots a categorical y (such as a series of factor scores) and a continuous x (which would be each factor score's mean).
 
-### 2.2. GetStataSchemes.do
+### 2.1.4 GetStataSchemes.do
 
 This file is a quick routine that will install a range of graphic schemes. Stata's raphic schemes are a useful way to improve the visual presentation of data.
 
