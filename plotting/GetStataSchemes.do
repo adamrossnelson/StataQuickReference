@@ -40,7 +40,7 @@ net install gr0002_3, from(http://www.stata-journal.com/software/sj4-3) replace
 	scalar byteswritten = filewrite("`c(sysdir_plus)'s/scheme-lean2wide.scheme", schemecontents, 1)
 
 // Copy Lean2Wide help documentation.
-copy "https://raw.githubusercontent.com/adamrossnelson/StataQuickReference/master/scheme_lean2wide.hlp" ///
+copy "https://raw.githubusercontent.com/adamrossnelson/StataQuickReference/master/wkspc/scheme_lean2wide.hlp" ///
 "`c(sysdir_plus)'s/", replace
 
 // Needs line to download the lean2wide scheme file.
