@@ -4,10 +4,10 @@ clear all
 
 // Recommend running install routine for additional Stata graph schemes.
 // To add these additional schemes use the following command:
-// do https://raw.githubusercontent.com/adamrossnelson/StataQuickReference/master/GetStataSchemes.do
+// do https://raw.githubusercontent.com/adamrossnelson/StataQuickReference/master/plotting/GetStataSchemes.do
 
 // Load example data
-use https://github.com/adamrossnelson/StataQuickReference/raw/master/ExampleIPEDS.dta
+use https://github.com/adamrossnelson/StataQuickReference/raw/master/exampledata/ExampleIPEDS.dta
 
 // Create a basic histogram plots.
 
