@@ -61,10 +61,17 @@ See also: https://github.com/adamrossnelson/conmtrx
 More information from: https://github.com/bbradfield/brad-stata which explains:
 
 * `bradmean` Computes multiple independent means in a single table.
-* `bradbook` Creates a cleaner codebook for export to Word.
+* `bradbook` Creates a cleaner codebook for export.
 
 Download and install using `net install <package>, from(https://raw.github.com/bbradfield/brad-stata/master/) replace`
 
+Usage, once installed:
+```
+      bradbook [varlist] [, options]
+
+      export(filename)    filename for PDF file to be saved
+      replace             replaces file it already exists
+```
 ## stata-tidy
 
 Provides a new approach to `reshape`. More information from: https://github.com/matthieugomez/tidy.ado
