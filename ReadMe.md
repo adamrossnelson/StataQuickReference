@@ -6,13 +6,14 @@
 - [2. Stata Quick Reference](#2-stata-quick-reference)
     - [2.1. Examples replated to plotting images and figures](#21-examples-replated-to-plotting-images-and-figures)
         - [2.1.1. BasicPlotting.do](#211-basicplottingdo)
-        - [2.1.2. geoplotipeds.do](#212-geoplotipedsdo)
-        - [2.1.3. Facradar.do](#213-facradardo)
-        - [2.1.4. GetStataSchemes.do](#22-getstataschemesdo)
-    - [2.3. renvarlabs.do](#23-renvarlabsdo)
-    - [2.4. FictionalGPAData.do](#24-fictionalgpadatado)
-    - [2.5. md_demo.do](#25-mddemodo)
-    - [2.6. asciiadam.do](#26-asciiadamdo)
+        - [2.1.2. marginstrend.do](#212-marginstrenddo)
+        - [2.1.3. geoplotipeds.do](#213-geoplotipedsdo)
+        - [2.1.4. Facradar.do](#214-facradardo)
+        - [2.1.5. GetStataSchemes.do](#215-getstataschemesdo)
+    - [2.2. renvarlabs.do](#22-renvarlabsdo)
+    - [2.3. FictionalGPAData.do](#23-fictionalgpadatado)
+    - [2.4. md_demo.do](#24-md_demodo)
+    - [2.5. asciiadam.do](#25-asciiadamdo)
 - [3. License](#3-license)
 
 <!-- /TOC -->
@@ -38,7 +39,15 @@ do https://raw.githubusercontent.com/adamrossnelson/StataQuickReference/master/p
 use https://github.com/adamrossnelson/StataQuickReference/raw/master/exampledata/ExampleIPEDS.dta
 ```
 
-### 2.1.2. geoplotipeds.do
+### 2.1.2. marginstrend.do
+
+This do file demonstrates using margins and marginsplot to visualize trends using Stata. Data is fictional.
+```Stata
+// To run from command line:
+do https://raw.githubusercontent.com/adamrossnelson/StataQuickReference/master/plotting/marginstrend.do
+```
+
+### 2.1.3. geoplotipeds.do
 
 Using the longitude and latitude variables stored in IPEDS data this routine builds a visualization of the institutions located in North America.
 
@@ -47,13 +56,13 @@ Using the longitude and latitude variables stored in IPEDS data this routine bui
 do https://raw.githubusercontent.com/adamrossnelson/StataQuickReference/master/plotting/geoplotipeds.do
 ```
 
-### 2.1.3. Facradar.do
+### 2.1.4. Facradar.do
 
 Another plotting demonstration. Demonstrates genderating a radar plot. Requires the `radar` package which is available at `http://fmwww.bc.edu/repec/bocode/r/radar.html`. The example given in `radar` documentation shows the package excels at plotting a categorical y (such as automobile make) and a continuous x (automobile weight).
 
 This implementatino plots a categorical y (such as a series of factor scores) and a continuous x (which would be each factor score's mean).
 
-### 2.1.4 GetStataSchemes.do
+### 2.1.5. GetStataSchemes.do
 
 This file is a quick routine that will install a range of graphic schemes. Stata's raphic schemes are a useful way to improve the visual presentation of data.
 
@@ -71,7 +80,7 @@ graph query, schemes
 // Change default scheme:
 set scheme [scheme name], perm
 ```
-## 2.3. renvarlabs.do
+## 2.2. renvarlabs.do
 
 This do file provides a method to quickly add text to all variable labels. Also provides an example code that can reference existing variable labels which is useful when automating output for graphs or putdoc/pdf, etc.
 
@@ -80,7 +89,7 @@ This do file provides a method to quickly add text to all variable labels. Also 
 do https://raw.githubusercontent.com/adamrossnelson/StataQuickReference/master/renvarlabs.do
 ```
 
-## 2.4. FictionalGPAData.do
+## 2.3. FictionalGPAData.do
 
 Builds a dataset with fictional GPA data. Demonstration of stata random number generators.
 
@@ -88,13 +97,13 @@ Builds a dataset with fictional GPA data. Demonstration of stata random number g
 do https://raw.githubusercontent.com/adamrossnelson/StataQuickReference/master/FictionalGPAData.do
 ```
 
-## 2.5. md_demo.do
+## 2.4. md_demo.do
 
 Generates markdown from Stata using `qui` abd `noi di...` Demonstrates and tests a method for Stata to automate output for display on GitHub.
 
 Cannot be run from command line without downloading a local copy.
 
-## 2.6. asciiadam.do
+## 2.5. asciiadam.do
 
 Example of a vaity branding splash.
 
