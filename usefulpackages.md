@@ -1,5 +1,13 @@
 # A list of useful Stata packages.
 
+## conmtrx
+
+Produces a useful confusion matrix and related statistics. More information: https://github.com/adamrossnelson/conmtrx
+
+## smrtbl
+
+Stata 15 introduced putdocx which provides options for saving results and output to word files. Stata 15 did not provide a quick or simple one-line command for saving one- or two-way table results to word files. The `smrtbl` package, which is a part of the larger yet-to-be-implemented `smrput` family of packages, provides the missing table output option. More information: https://github.com/adamrossnelson/smrput. See below for related `classtabi` package.
+
 ## Tablecol
 
 `tablecol` has been a lifesaver. Simplifes the production of three way tabulations. Also can provide one and twoway tabulations that are easier to read. Example output:
