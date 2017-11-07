@@ -1,3 +1,12 @@
+// ####   REVISION HISTORY   ####
+//   Nov/2017:    Adam Ross Nelson  Original Version
+// ####   DESCRIPTION        ####
+//   Do file builds a mock data set consisting of variables.
+//   Fictional data includes variables that represent age, gpa,
+//   gender, and major.
+//   Maintained: https://github.com/adamrossnelson/StataQuickReference
+//   License: https://github.com/adamrossnelson/StataQuickReference/blob/master/LICENSE.md
+
 set more off
 clear all
 
