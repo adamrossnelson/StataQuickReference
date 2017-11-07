@@ -8,5 +8,5 @@ This routine provides an example of using histograms as a timeline. Produces a v
 ## To run from Stata:
 
 ```Stata
-do https://raw.githubusercontent.com/adamrossnelson/StataQuickReference/master/gist_saheorgs/HistogramAsTimeline.dp
+do https://raw.githubusercontent.com/adamrossnelson/StataQuickReference/master/gist_saheorgs/HistogramAsTimeline.do
 ```
