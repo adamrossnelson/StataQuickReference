@@ -94,11 +94,26 @@ replace mockgpa = 2.5 if _n > 39500 & _n < 39700
 replace mockgpa = 1.5 if _n > 39400 & _n < 39500
 replace mockgpa = .5 if _n > 39325 & _n < 39400
 
-// Label the new variable
-label variable mockgpa "Fictional Term GPA Data"
-
 // Simplify / round mock gpa
 replace mockgpa = round(mockgpa,.01)
+
+// Add underlying distriptions at 1, 2, 3, and 4
+gen srtr = rnormal(100,10)
+sort srtr
+drop srtr
+replace mockgpa = round(rnormal(4,.025),.01) if _n < 10000
+gen srtr = rnormal(100,10)
+sort srtr
+drop srtr
+replace mockgpa = round(rnormal(3,.075),.01) if _n < 10000
+gen srtr = rnormal(10,10)
+sort srtr
+drop srtr
+replace mockgpa = round(rnormal(2,.075),.01) if _n < 8000
+gen srtr = rnormal(10,100)
+sort srtr
+drop srtr
+replace mockgpa = round(rnormal(1,.075),.01) if _n < 6000
 
 // Add fictional residence hall information
 gen hall = round(runiform(1,10))
@@ -121,19 +136,20 @@ label variable isFA "Fictional Financial Aid Status 1 = Applicant 0 = Non-applic
 
 // Add fall spring cum gpa
 gen fallgpa = round(rnormal(1.06,.2) + (mockgpa * runiform(.6855,.7016)),.01)
-replace fallgpa = 4 if fallgpa > 4
-gen spgpa = round((fallgpa + mockgpa / 2) + rnormal(0,.25),.01)
-replace spgpa = 4 if spgpa > 4
+// replace fallgpa = 4 if fallgpa > 4
+gen spgpa = round((fallgpa) + rnormal(0,.25),.01)
+// replace spgpa = 4 if spgpa > 4
 
 foreach varname in fallgpa spgpa mockgpa {
-    hist mockgpa, discrete frequency name(gph`varname'1)
+    // hist mockgpa, discrete frequency name(gph`varname'1)
 
     // Generate modes at each of the gpa point.
     sort `varname'
     replace `varname' = 1 if _n < 100
-    replace `varname' = 2 if _n > 99 & _n < 350
-    replace `varname' = 3 if _n > 349 & _n < 1400
-    replace `varname' = 4 if _n > 1399 & _n < 5600
+    replace `varname' = 2 if _n > 99 & _n < 400
+    replace `varname' = 3 if _n > 399 & _n < 1600
+    replace `varname' = 4 if _n > 1599 & _n < 5800
+	replace `varname' = 2 if _n > 5799 & _n < 6000
 
     // Sort again by new distribution
     sort `varname'
@@ -153,9 +169,29 @@ foreach varname in fallgpa spgpa mockgpa {
     replace `varname' = 1.5 if _n > 39400 & _n < 39500
     replace `varname' = .5 if _n > 39325 & _n < 39400
 
+	replace `varname' = round(runiform(1,4),.01) if `varname' > 4 | `varname' < 0
+	
     // Visuzlize the distribution
-    hist mockgpa, discrete frequency name(gph`varname'2)
+    hist `varname', discrete frequency name(gph`varname'2)
 }
+
+// Add a cumulative gpa (crudly calculated)
+gen cumgpa = (fallgpa + spgpa) / 2
+
+// Order variables
+order mockgpa, first
+order cumgpa fallgpa spgpa, after(mockgpa)
+
+// Label gpa variables 
+label variable mockgpa "Ficational mock gpa"
+label variable cumgpa "Fictional cum gpa ((fall + sp) / 2)"
+label variable fallgpa "Fictional fall gpa"
+label variable spgpa "Fictional spring gpa"
+
+// Final manipulation of halls
+replace hall = . if _n < 15000
+
+corr cumgpa fallgpa spgpa mockgpa
 
 // Do a random sort
 gen srtr = rnormal(10,10)
