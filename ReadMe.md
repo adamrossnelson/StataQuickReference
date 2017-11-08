@@ -12,7 +12,7 @@
         - [2.1.5. GetStataSchemes.do](#215-getstataschemesdo)
     - [2.2. renvarlabs.do](#22-renvarlabsdo)
     - [2.3. FictionalGPAData.do](#23-fictionalgpadatado)
-    - [2.4. md_demo.do](#24-md_demodo)
+    - [2.4. md_demo.do](#24-mddemodo)
     - [2.5. asciiadam.do](#25-asciiadamdo)
 - [3. License](#3-license)
 
@@ -23,6 +23,8 @@
 These examples are designed to run from the web. Where possible and where time has permitted these examples are both Mac and Windows compatible. But, no promises.
 
 For a currated list of packages, their descriptions, and links to further documentation see: [list of useful packages](https://github.com/adamrossnelson/StataQuickReference/blob/master/usefulpackages.md)
+
+The folks over [geocenter.github.io](https://geocenter.github.io/StataTraining/portfolio/01_resource/) have produced and provided a series of Stata quick references. I keep copies printed out on cardstock at all of my workstations. They're great as gifts! [Local copies here](https://raw.githubusercontent.com/adamrossnelson/StataQuickReference/master/chtshts/AllCheatSheets.pdf). Also worth reviewing are similar [quick references for R and RStudio](https://www.rstudio.com/resources/cheatsheets/).
 
 Send comments or suggestions via GitHub or Twitter : @adamrossnelson
 
