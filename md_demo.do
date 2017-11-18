@@ -7,7 +7,7 @@ qui {
 	gen y = _n + rnormal(10,10)
 	gen x = runiform(.5,1.25) * _n * _n
 	
-	noi di "# GitHub flavored markdown genderated from Stata"
+	noi di "# GitHub flavored markdown generated from Stata"
 	noi di "This markdown file was generated from Stata. To demonstrate and"
 	noi di "test Stata's ability to automate output for display on GitHub."
 	noi di "Begin by generating random numbers with a relationship. See "
