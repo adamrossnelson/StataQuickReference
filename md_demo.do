@@ -37,7 +37,7 @@ qui {
 	noi di "## Provide Graphic"
 	scatter y x
 	graph export md_graphic.png, replace
-	noi di "![Image of Scatterplot](graphic.png)"
+	noi di "![Image of Scatterplot](md_graphic.png)"
 	noi di "## Call another do file"
 	noi di "```"
 	noi do https://raw.githubusercontent.com/adamrossnelson/StataQuickReference/master/asciiadam.do
