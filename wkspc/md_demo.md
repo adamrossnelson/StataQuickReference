@@ -1,4 +1,4 @@
-# GitHub flavored markdown genderated from Stata
+# GitHub flavored markdown generated from Stata
 This markdown file was generated from Stata. To demonstrate and
 test Stata's ability to automate output for display on GitHub.
 Begin by generating random numbers with a relationship. See 
