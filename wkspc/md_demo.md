@@ -51,7 +51,7 @@ regress y c.x#c.x, r
  
 ```
 ## Provide Graphic
-![Image of Scatterplot](graphic.png)
+![Image of Scatterplot](md_graphic.png)
 ## Call another do file
 ```
 
