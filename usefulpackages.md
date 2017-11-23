@@ -4,9 +4,15 @@
 
 Produces a useful confusion matrix and related statistics. More information: https://github.com/adamrossnelson/conmtrx
 
-## smrtbl
+## SmartPut
 
-Stata 15 introduced putdocx which provides options for saving results and output to word files. Stata 15 did not provide a quick or simple one-line command for saving one- or two-way table results to word files. The `smrtbl` package, which is a part of the larger yet-to-be-implemented `smrput` family of packages, provides the missing table output option. More information: https://github.com/adamrossnelson/smrput. See below for related `classtabi` package.
+The SmartPut package provides a command family that produces various tables through putdocx. Stata 15 introduced putdocx which provides options for saving results and output to word files. Stata 15 did not provide a quick or simple one-line command for saving one- or two-way table results to word files. `smrtbl` produces one- or two-way tables. `smrcol` produces a table of dummy varaibles and related summary statistics. 
+
+`smrfmn` produces a table of summary statistics filtered by one or more indicator variables. More information: https://github.com/adamrossnelson/smrput.
+
+## equation
+
+Quicly converts regression results into an equation. Useful for troubleshooting your work. Also useful as a teaching or learning tool for users new to Stata or to statistics. For more information: http://fmwww.bc.edu/repec/bocode/e/equation. Or to install `ssc install equation`.
 
 ## Tablecol
 
