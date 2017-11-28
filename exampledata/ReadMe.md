@@ -26,7 +26,10 @@ To open in mock fictional gpa series in Stata copy and past the following to the
 ````Stata
 use https://raw.githubusercontent.com/adamrossnelson/StataQuickReference/master/exampledata/mock_fictional_gpa.dta, clear
 ````
-
+To run the do file from Stata command line.
+````Stata
+do https://raw.githubusercontent.com/adamrossnelson/StataQuickReference/master/exampledata/mock_fictional_gpa.do
+````
 
 ## FictionalGPAData series
 
