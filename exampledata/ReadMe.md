@@ -7,19 +7,25 @@ This folder contains fictional data for demonstration or testing uses.
 `mock_fictional_gpa.do`, `mock_fictional_gpa.dta`, and `mock_fictional_gpa.csv` respectively contain a Stata do file that builds the related dta and csv data files. The following variables are available:
 
 ````
-Contains data from C:\GITS\StataQuickReference\exampledata\mock_fictional_gpa.dta
+Contains data
   obs:        40,000                          
- vars:             4                          7 Nov 2017 12:30
- size:       640,000                          
---------------------------------------------------------------------------------------
+ vars:            10                          
+ size:     1,600,000                          
+--------------------------------------------------------------------------------------------------
               storage   display    value
 variable name   type    format     label      variable label
---------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------
+mockgpa         float   %9.0g                 Ficational mock gpa
+cumgpa          float   %9.0g                 Fictional cum gpa ((fall + sp) / 2)
+fallgpa         float   %9.0g                 Fictional fall gpa
+spgpa           float   %9.0g                 Fictional spring gpa
 age             float   %9.0g                 Fictional age in months
-mockgpa         float   %9.0g                 Fictional Term GPA Data
+classyr         float   %9.0g      clyr       Fictional year in school
 gender          float   %9.0g      gend       Fictional gender. 1 Female, 2 Male
 major           float   %9.0g      maj        Fictional Major
---------------------------------------------------------------------------------------
+hall            float   %14.0g     halls      Fictional residence Hall Name
+isFA            float   %9.0g                 Fictional Fin Aid Status 1=Applicant 0=Non-applicant
+--------------------------------------------------------------------------------------------------
 ````
 To open in mock fictional gpa series in Stata copy and past the following to the command line or do file.
 

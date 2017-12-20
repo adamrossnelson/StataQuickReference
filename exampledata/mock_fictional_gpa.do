@@ -132,7 +132,7 @@ label values hall halls
 gen isFA = round(rnormal(.625,.01) + (mockgpa * rnormal(-.0363,.001)))
 replace isFA = round(rnormal(.625,.01) + (mockgpa * rnormal(-.0363,.001))) + hall / 1000 if _n > 20000
 replace isFA = round(rnormal(.5,.01)) if _n > 12000
-label variable isFA "Fictional Financial Aid Status 1 = Applicant 0 = Non-applicant"
+label variable isFA "Fictional Fin Aid Status 1=Applicant 0=Non-applicant"
 
 // Add fall spring cum gpa
 gen fallgpa = round(rnormal(1.06,.2) + (mockgpa * runiform(.6855,.7016)),.01)
