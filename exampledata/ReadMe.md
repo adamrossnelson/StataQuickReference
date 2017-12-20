@@ -37,31 +37,6 @@ To run the do file from Stata command line.
 do https://raw.githubusercontent.com/adamrossnelson/StataQuickReference/master/exampledata/mock_fictional_gpa.do
 ````
 
-## FictionalGPAData series
-
-`FictionalGPAData.dta` and `FictionalGPAData.csv` contain fictional gpa data. The following variables are available:
-
-````
-Contains data from C:\GITS\StataQuickReference\exampledata\FictionalGPAData.dta
-  obs:         1,268                          
- vars:             9                          12 Sep 2017 11:11
- size:        45,648                          
----------------------------------------------------------------------------------
-              storage   display    value
-variable name   type    format     label      variable label
----------------------------------------------------------------------------------
-isMale          float   %9.0g                 
-isStem          float   %9.0g                 
-hallNum         float   %9.0g                 
-fallgpa         float   %9.0g                 
-fallcr          float   %9.0g                 
-sprigpa         float   %9.0g                 
-spricr          float   %9.0g                 
-cumgpa          float   %9.0g                 
-SAP             float   %9.0g                 
----------------------------------------------------------------------------------
-````
-
 ## ExampleIPEDS.dta & ExampleIPEDSsmall.dta
 
 `ExampleIPEDS.dta` contains three years of data from IPEDS. For more information see also [StataIPEDSAll](https://github.com/adamrossnelson/StataIPEDSAll). 
