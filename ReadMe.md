@@ -11,9 +11,10 @@
         - [2.2.3. geoplotipeds.do](#223-geoplotipedsdo)
         - [2.2.4. Facradar.do](#224-facradardo)
         - [2.2.5. GetStataSchemes.do](#225-getstataschemesdo)
-    - [2.3. renvarlabs.do](#23-renvarlabsdo)
-    - [2.4. md_demo.do](#24-mddemodo)
-    - [2.5. asciiadam.do](#25-asciiadamdo)
+    - [2.3. ProgArgs.do](#23-progargsdo)
+    - [2.4. renvarlabs.do](#24-renvarlabsdo)
+    - [2.5. md_demo.do](#25-mddemodo)
+    - [2.6. asciiadam.do](#26-asciiadamdo)
 - [3. License](#3-license)
 
 <!-- /TOC -->
@@ -88,7 +89,18 @@ graph query, schemes
 // Change default scheme:
 set scheme [scheme name], perm
 ```
-## 2.3. renvarlabs.do
+
+## 2.3. ProgArgs.do
+
+Demonstration of defining a program, passing arguments, referencing and displaying the arguments passed. Demonstrates material presented Stata 15 User Manua sections 18.1 & 18.4.
+
+To execute from command line:
+
+```Stata
+do https://raw.githubusercontent.com/adamrossnelson/StataQuickReference/master/ProgArgs.do
+```
+
+## 2.4. renvarlabs.do
 
 This do file provides a method to quickly add text to all variable labels. Also provides an example code that can reference existing variable labels which is useful when automating output for graphs or putdoc/pdf, etc.
 
@@ -97,13 +109,13 @@ This do file provides a method to quickly add text to all variable labels. Also 
 do https://raw.githubusercontent.com/adamrossnelson/StataQuickReference/master/renvarlabs.do
 ```
 
-## 2.4. md_demo.do
+## 2.5. md_demo.do
 
 Generates markdown from Stata using `qui` abd `noi di...` Demonstrates and tests a method for Stata to automate output for display on GitHub.
 
 Cannot be run from command line without downloading a local copy.
 
-## 2.5. asciiadam.do
+## 2.6. asciiadam.do
 
 Example of a vaity branding splash.
 
