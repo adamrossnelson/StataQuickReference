@@ -1,8 +1,32 @@
 # A list of useful Stata packages.
 
+## fre
+
+When tabulating categorical variables `fre` provides more information about the underlying coding. Also provides more complete information regarding missing variables. Sample output (compare to `tabulate`.)
+
+```
+. fre sockeep
+
+sockeep -- I sometimes eat sandwiches in the winter.
+-----------------------------------------------------------------------------------
+                                      |      Freq.    Percent      Valid       Cum.
+--------------------------------------+--------------------------------------------
+Valid   1 Describes me greatly        |          8       0.25       0.33       0.33
+        2 Describes me well           |         44       1.36       1.82       2.15
+        3 Describes me somewhat       |        200       6.20       8.25      10.40
+        4 Describes me very little    |        711      22.03      29.34      39.74
+        5 Does not describe me at all |       1460      45.23      60.26     100.00
+        Total                         |       2423      75.06     100.00           
+Missing .                             |        805      24.94                      
+Total                                 |       3228     100.00                      
+-----------------------------------------------------------------------------------
+```
+
+Related and also useful is the command `numlabel, add` which can be used to prefix, remove, or otherwise modify valulables for more readable output.
+
 ## conmtrx
 
-Produces a useful confusion matrix and related statistics. More information: https://github.com/adamrossnelson/conmtrx
+Produces a confusion matrix and related statistics. The conmtrx output is similar to the output from R's caret package and its `confusionMatrix()` function. More information: https://github.com/adamrossnelson/conmtrx
 
 ## SmartPut
 
