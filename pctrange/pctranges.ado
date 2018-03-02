@@ -1,5 +1,7 @@
 *! pctranges v1.0.6 ARNelson 02mar2018
-*!  Adapted from Bauman (2009) An Introduction to Stata Programming.
+*! Adapted from :
+*!  Baum, C. (2016). An introduction to Stata programming. 
+*!  College Station, Texas: StataCorp LP.
 
 // Specify program. 
 // rclass option allow storage of values for later reference.
