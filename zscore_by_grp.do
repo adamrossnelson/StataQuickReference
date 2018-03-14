@@ -4,6 +4,8 @@
 // and also variable cindon "Price for in-district students living on campus"
 // by state, sector, and year.
 
+// This file demonstrates using the output produced by:
+// https://raw.githubusercontent.com/adamrossnelson/StataIPEDSAll/master/IPEDSDirInfo02to16.do
 use IPEDSDirInfo02to16.dta, clear
 
 // Make list of variables to work with.
