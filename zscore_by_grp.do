@@ -16,7 +16,7 @@ local thevars fte cindon
 // members must iteratively reference grpz_`varname'. Thus, it is necssary to
 // use replace instead of gen in the subsequent loop.
 foreach varname in `thevars' {
-	gen 1grpz_`varname' = . 
+	gen grpz_`varname' = . 
 }
 
 // Loop through varlist to apply standardized zscores for each variable.
