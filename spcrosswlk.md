@@ -10,6 +10,7 @@ import pandas as pd
 from pandas import Series, DataFrame
 ```
 
+(*Side note, if anyone knows how to make multi-line code blocks in a markdown table. Let me know.*)
 
 Description | Stata Code | Pandas Code
 ------------|------------|------------
