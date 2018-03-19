@@ -125,6 +125,10 @@ To execute from command line (or do file):
 do https://raw.githubusercontent.com/adamrossnelson/StataQuickReference/master/asciiadam.do
 ```
 
+# Stata to Pandas Cross-Walk
+
+This repo also provides a [Stata to Pandas Cross-Walk](https://github.com/adamrossnelson/StataQuickReference/blob/master/spcrosswlk.md)
+
 # 3. License
 
 Except where otherwise specifically noted:
