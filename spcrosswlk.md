@@ -26,6 +26,7 @@ Generate new text variable | `gen newtxt = "Some text here"` | `exfile['newtxt']
 Change text variable value | `replace newtxt = "Newer text"` | `exfile['newtxt'] = 'Newer text'`
 Generate new int variable | `gen newnum = 10` | `exfile['newnum'] = 10`
 Change int variable value | `replace newnum = 222` | `exfile['newnum'] = 222`
+Generate dummy based on text variable | `gen fgn = (foreign == "Foreign")` | `exfile['fgn'] = np.where(exfile['foreign']=='Foreign', 1, 0)`
 Generate new variable relative to other variable | `gen rtd_disp = displacement / 10` <br> or <br> `gen mpg2 = mpg * mpg` <br> or <br> `gen lprice = ln(price)` | `exfile['rtd_disp'] = exfile['displacement'] / 10` <br> or <br> `exfile['mpg2'] = exfile['mpg'] * exfile['mpg']` <br> or <br> `exfile['lprice'] = np.log10(exfile['price'])`
 Generate new variable equal to _n or index | `gen sorter = _n` | `exfile['sorter'] = np.arange(0,len(exfile.index))`
 Rename a variable | `rename mpg milespg` | `exfile['milespg'] = exfile['mpg']` <br> `del exfile['mpg']`
