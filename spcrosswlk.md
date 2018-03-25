@@ -8,6 +8,8 @@ For pandas, this crosswalk assumes the following import statements:
 import numpy as pd
 import pandas as pd
 from pandas import Series, DataFrame
+# Additional optional setting
+pd.set_option('display.max_rows', 8)
 ```
 
 (*Side note, if anyone knows how to make multi-line code blocks in a markdown table with syntax highlighting. Let me know.*)
@@ -34,6 +36,12 @@ Delete variable(s) | `drop newtxt newnum` | `exfile = exfile.drop(columns=['newt
 Keep variable(s) | `keep make price mpg` | `exfile = exfile[['make','price','mpg']]`
 Delete specific observation | `drop if _n = 10` | `exfile = exfile.drop(9)`
 Delete observation(s) by logic | `drop if mpg > 30` <br> or <br> `keep if mpg < 31` | `exfile = exfile[exfile['mpg'] < 31]` <br> or <br> `exfile = exfile[exfile['mpg'] > 30]`
+Sorting by a variable ascending | `sort price` | `exfile = exfile.sort_values(by['price'])`
+Sorting by a variable descending | `gsort -price` | `exfile = exfile.sort_values(by['price'], ascending=False)`
+Display summary statistics (specific variables) | `sum price mpg weight` | `exfile[['price','mpg','weight']].describe()` <br> or <br> `exfile[['price','mpg','weight']].describe().T`
+One-way tabulation | `tab foreign` <br> or <br> `tab rep78` | `exfile['foreign'].value_counts()` <br> or <br> `exfile['rep78'].value_counts()`
+Two-way tabulation | `tab re78 foreign` | pd.crosstab(exfile['rep78'], exfile['foreign'])
+Three-way tabulation | Setup: <br> `gen expensive = price > 6100` <br> Execution:<br> `table rep78 foreign expensive` | Setup: <br> `exfile['expensive'] = np.where(exfile['price']>6100, 1, 0)` <br> Execution: <br> `pd.crosstab(exfile['rep78'], [exfile['foreign'], exfile['expensive']])`
 
 ## Also useful
 
