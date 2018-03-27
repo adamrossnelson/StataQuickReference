@@ -5,7 +5,7 @@ This repo uses Stata's example data set `auto2.dta` available at http://www.stat
 For pandas, this crosswalk assumes the following import statements:
 
 ```python
-import numpy as pd
+import numpy as np
 import pandas as pd
 from pandas import Series, DataFrame
 # Additional optional setting
