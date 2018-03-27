@@ -42,11 +42,14 @@ Display summary statistics (specific variables) | `sum price mpg weight` | `exfi
 One-way tabulation | `tab foreign` <br> or <br> `tab rep78` | `exfile['foreign'].value_counts()` <br> or <br> `exfile['rep78'].value_counts()`
 Two-way tabulation | `tab re78 foreign` | pd.crosstab(exfile['rep78'], exfile['foreign'])
 Three-way tabulation | Setup: <br> `gen expensive = price > 6100` <br> Execution:<br> `table rep78 foreign expensive` | Setup: <br> `exfile['expensive'] = np.where(exfile['price']>6100, 1, 0)` <br> Execution: <br> `pd.crosstab(exfile['rep78'], [exfile['foreign'], exfile['expensive']])`
+Encode a categorical (That was originally in string) | `encode make, gen(make_cat)` | `exfile['make_cat'] = exfile['make'].astype('category')` <br> then <br> `exfile['make_cat_code' = exfile['make_cat'].cat.codes`
+Create an array of dummies from categorical | `tab make, gen(make_)` | `exfile = pd.get_dummies(exfile, columns=['make'])`
 
 ## Also useful
 
 * [Pandas cheatsheet](https://s3.amazonaws.com/assets.datacamp.com/blog_assets/PandasPythonForDataScience.pdf)
 * [Stata cheesheets](https://github.com/adamrossnelson/StataQuickReference/blob/master/chtshts/AllCheatSheets.pdf)
+* [Guide to Encoding Categorical Values in Python](http://pbpython.com/categorical-encoding.html)
 
 ## Questions, Comments, & Contributions
 
