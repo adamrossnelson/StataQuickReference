@@ -14,6 +14,8 @@ pd.set_option('display.max_rows', 8)
 
 (*Side note, if anyone knows how to make multi-line code blocks in a markdown table with syntax highlighting. Let me know.*)
 
+## Starting Out
+
 Description | Stata Code | Pandas Code
 ------------|------------|------------
 Load example data | `use http://www.stata-press.com/data/r15/auto2.dta` | `exfile = pd.read_stata('http://www.stata-press.com/data/r15/auto2.dta')`
@@ -39,11 +41,26 @@ Delete observation(s) by logic | `drop if mpg > 30` <br> or <br> `keep if mpg < 
 Sorting by a variable ascending | `sort price` | `exfile = exfile.sort_values(by['price'])`
 Sorting by a variable descending | `gsort -price` | `exfile = exfile.sort_values(by['price'], ascending=False)`
 Display summary statistics (specific variables) | `sum price mpg weight` | `exfile[['price','mpg','weight']].describe()` <br> or <br> `exfile[['price','mpg','weight']].describe().T`
-One-way tabulation | `tab foreign` <br> or <br> `tab rep78` | `exfile['foreign'].value_counts()` <br> or <br> `exfile['rep78'].value_counts()`
-Two-way tabulation | `tab re78 foreign` | pd.crosstab(exfile['rep78'], exfile['foreign'])
-Three-way tabulation | Setup: <br> `gen expensive = price > 6100` <br> Execution:<br> `table rep78 foreign expensive` | Setup: <br> `exfile['expensive'] = np.where(exfile['price']>6100, 1, 0)` <br> Execution: <br> `pd.crosstab(exfile['rep78'], [exfile['foreign'], exfile['expensive']])`
+
+
+## Categorical Factor Variables
+
+Description | Stata Code | Pandas Code
+------------|------------|------------
+Load example data | `use http://www.stata-press.com/data/r15/hbp2.dta` | `exfile = pd.read_stata('http://www.stata-press.com/data/r15/hbp2.dta')`
+One-way tabulation | `tab year` <br> or <br> `tab race` | `exfile['year'].value_counts()` <br> or <br> `exfile['race'].value_counts()`
+Two-way tabulation | `tab year race` | `pd.crosstab(exfile['year'], exfile['race'])`
+Three-way tabulation | `table year race sex` | `pd.crosstab(exfile['year'], [exfile['sex'], exfile['race']])`
 Encode a categorical (That was originally in string) | `encode make, gen(make_cat)` | `exfile['make_cat'] = exfile['make'].astype('category')` <br> then <br> `exfile['make_cat_code' = exfile['make_cat'].cat.codes`
 Create an array of dummies from categorical | `tab make, gen(make_)` | `exfile = pd.get_dummies(exfile, columns=['make'])`
+
+## Merge Data
+
+Description | Stata Code | Pandas Code
+------------|------------|------------
+Load example data | `use http://www.stata-press.com/data/r15/autoexpense.dta`<br> and <br> `use http://www.stata-press.com/data/r15/autosize.dta` | `autoexp = pd.read_stata('http://www.stata-press.com/data/r15/autoexpense.dta')` <br> and <br> `autosiz = pd.read_stata('http://www.stata-press.com/data/r15/autosize.dta')`
+Merge autoexpense autosize (using make as the key variable) | `merge 1:1 make using http://www.stata-press.com/data/r15/autoexpense.dta` | `pd.merge(autoexp,autosiz, on='make',how='outer')`
+
 
 ## Also useful
 
