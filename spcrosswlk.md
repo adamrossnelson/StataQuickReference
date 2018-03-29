@@ -58,12 +58,56 @@ Three-way tabulation | `table year race sex` | `pd.crosstab(exfile['year'], [exf
 Encode a categorical (That was originally string) | `encode sex, gen(sex_cat)` | `exfile['sex_cat'] = exfile['sex'].astype('category')` <br> then <br> `exfile['sex_cat_code'] = exfile['sex_cat'].cat.codes`
 Create an array of dummies from categorical | `tab sex, gen(sex_)` | `exfile = pd.get_dummies(exfile, columns=['sex'])`
 
-## Merge Data
+## Merge Datasets
 
 Description | Stata Code | Pandas Code
 ------------|------------|------------
 Load example data | `use http://www.stata-press.com/data/r15/autoexpense.dta`<br> and <br> `use http://www.stata-press.com/data/r15/autosize.dta` | `autoexp = pd.read_stata('http://www.stata-press.com/data/r15/autoexpense.dta')` <br> and <br> `autosiz = pd.read_stata('http://www.stata-press.com/data/r15/autosize.dta')`
-Merge autoexpense autosize (using make as the key variable) | `merge 1:1 make using http://www.stata-press.com/data/r15/autoexpense.dta` | `pd.merge(autoexp,autosiz, on='make',how='outer')`
+Merge autoexpense autosize (using make as the key variable) | After loading `autosize.dta` <br> `merge 1:1 make using http://www.stata-press.com/data/r15/autoexpense.dta` | `pd.merge(autoexp,autosiz, on='make',how='outer')`
+
+## Append Datasets
+
+Description | Stata Code | Pandas Code
+------------|------------|------------
+Load example data | `use http://www.stata-press.com/data/r15/capop.dta`<br> and <br> `use http://www.stata-press.com/data/r15/txpop.dta` | `capop = pd.read_stata('http://www.stata-press.com/data/r15/capop.dta')` <br> and <br> `txpop = pd.read_stata('http://www.stata-press.com/data/r15/txpop.dta')`
+Append CA population with TX population | After loading `txpop.dta` <br> `append using http://www.stata-press.com/data/r15/capop.dta` | `pd.concat([capop,txpop])`
+Append and mark sources | `append using http://www.stata-press.com/data/r15/capop.dta, generate(source)` | `pd.concat([capop,txpop],keys=['ca','tx'])`
+
+## Reshape Datasets
+
+Description | Stata Code | Pandas Code
+------------|------------|------------
+Load example data | `use http://www.stata-press.com/data/r15/reshape1.dta` | `exfile = pd.read_stata('http://www.stata-press.com/data/r15/reshape1.dta')`
+Reshape from wide to long | `reshape long inc ue, i(id) j(year)` | `exfile = pd.wide_to_long(exfile, stubnames=['inc','ue'], i=['id','sex'], j='year')`
+Reshape long to wide | `reshape wide inc ue, i(id) j(year)` | Quick version: <br> `exfile2 = exfile.pivot_table(values=['sex','inc','ue'], columns='year', index='id')`
+
+While Pandas provides `wide_to_long` option, it does not provide a `long_to_wide` option. Below is code that will produce a long to wide reshape more consistent with Stata's results.
+
+```Python
+# Load example data that in long format.
+exfile = pd.read_stata('http://www.stata-press.com/data/r15/reshape6.dta')
+
+# Perpare wide dataframes for each variable that changes over j.
+exfile['inc_idx'] = 'inc' + exfile.year.astype(str)
+inc = exfile.pivot(index='id',columns='inc_idx',values='inc')
+
+exfile['ue_idx'] = 'ue' + exfile.year.astype(str)
+ue = exfile.pivot(index='id',columns='ue_idx',values='ue')
+
+# Concatenate / Append individual wide datasets.
+exfile2 = pd.concat([inc,ue],axis=1).reset_index()
+
+# Gather values for varaibles that do not change over j.
+exfile_sex = DataFrame(exfile[['id','sex']])
+exfile_sex = exfile_sex.pivot_table(index='id', values='sex').reset_index()
+
+# Merge variables that do not change over j.
+exfile3 = pd.merge(exfile_sex, exfile2, on='id')
+exfile3
+```
+
+
+exfile2 = exfile.pivot_table(values=['sex','inc','ue'], columns='year', index='id')
 
 
 ## Also useful
