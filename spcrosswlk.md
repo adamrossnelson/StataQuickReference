@@ -1,6 +1,10 @@
 # Stata to Pandas Cross-Walk
 
-This repo uses Stata's example data set `auto2.dta` available at http://www.stata-press.com/data/r15/auto2.dta to crosswalk a variety of Stata-Pandas equivalent code.
+This repo uses Stata example data sets to crosswalk a variety of Stata-Pandas equivalent code.
+  * `auto2.dta` available at http://www.stata-press.com/data/r15/auto2.dta 
+  * `hbp2.dta` available at http://www.stata-press.com/data/r15/hbp2.dta
+  * `autoexpense.dta` available at http://www.stata-press.com/data/r15/autoexpense.dta
+  * `autosize.dta` available at http://www.stata-press.com/data/r15/autoexpense.dta
 
 For pandas, this crosswalk assumes the following import statements:
 
