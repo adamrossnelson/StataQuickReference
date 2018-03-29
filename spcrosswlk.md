@@ -51,8 +51,8 @@ Load example data | `use http://www.stata-press.com/data/r15/hbp2.dta` | `exfile
 One-way tabulation | `tab year` <br> or <br> `tab race` | `exfile['year'].value_counts()` <br> or <br> `exfile['race'].value_counts()`
 Two-way tabulation | `tab year race` | `pd.crosstab(exfile['year'], exfile['race'])`
 Three-way tabulation | `table year race sex` | `pd.crosstab(exfile['year'], [exfile['sex'], exfile['race']])`
-Encode a categorical (That was originally in string) | `encode make, gen(make_cat)` | `exfile['make_cat'] = exfile['make'].astype('category')` <br> then <br> `exfile['make_cat_code' = exfile['make_cat'].cat.codes`
-Create an array of dummies from categorical | `tab make, gen(make_)` | `exfile = pd.get_dummies(exfile, columns=['make'])`
+Encode a categorical (That was originally string) | `encode sex, gen(sex_cat)` | `exfile['sex_cat'] = exfile['sex'].astype('category')` <br> then <br> `exfile['sex_cat_code'] = exfile['sex_cat'].cat.codes`
+Create an array of dummies from categorical | `tab sex, gen(sex_)` | `exfile = pd.get_dummies(exfile, columns=['sex'])`
 
 ## Merge Data
 
