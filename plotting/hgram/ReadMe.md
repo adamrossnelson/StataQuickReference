@@ -59,16 +59,16 @@ foreach varname in s_enrtot l_enrtot {
 
 ### First iteration / First image
 
-![Image of First Viz](/imgs/s_enrtot_alsts.png)
+![Image of First Viz](imgs/s_enrtot_alsts.png)
 
 ### First iteration / Second image
 
-![Image of Second Viz](/imgs/s_enrtot_mwsts.png)
+![Image of Second Viz](imgs/s_enrtot_mwsts.png)
 
 ### Second iteration / First image
 
-![Image of Third Viz](/imgs/l_enrtot_alsts.png)
+![Image of Third Viz](imgs/l_enrtot_alsts.png)
 
 ### Second iteration / Second image
 
-![Image of Fourth Viz](/imgs/l_enrtot_mwsts.png)
+![Image of Fourth Viz](imgs/l_enrtot_mwsts.png)
