@@ -1,10 +1,22 @@
 # A list of useful Stata packages.
 
+## maptile and spmap
+
+Useful when visulizing geographic data. Maptile produces categorical maps. To install and read help docs:
+
+```Stata
+ssc install maptile
+help maptile
+
+ssc install spmap
+help spmap
+```
+
 ## fre
 
 When tabulating categorical variables `fre` provides more information about the underlying coding. Also provides more complete information regarding missing variables. Sample output (compare to `tabulate`.)
 
-```
+```Stata
 . fre sockeep
 
 sockeep -- I sometimes eat sandwiches in the winter.
@@ -42,7 +54,7 @@ Quicly converts regression results into an equation. Useful for troubleshooting 
 
 `tablecol` has been a lifesaver. Simplifes the production of three way tabulations. Also can provide one and twoway tabulations that are easier to read. Example output:
 
-```
+```Stata
 . use https://github.com/adamrossnelson/StataQuickReference/raw/master/ExampleIPEDS.dta, clear
 
 . tablecol isYr instsize hbcu if instsize > 0 & instsize < 5
@@ -104,7 +116,7 @@ More information from: https://github.com/bbradfield/brad-stata which explains:
 Download and install using `net install <package>, from(https://raw.github.com/bbradfield/brad-stata/master/) replace`
 
 Usage, once installed:
-```
+```Stata
       bradbook [varlist] [, options]
 
       export(filename)    filename for PDF file to be saved
