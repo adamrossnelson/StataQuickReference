@@ -32,7 +32,7 @@ Display observation(s) by logic | `list make price mpg trunk if mpg > 30` | `exf
 List variable names and/or get variable information | `desc` <br> or <br> `describe` | `exfile.dtypes` and <br> `exfile.describe()` or <br> `for var in exfile.columns:` <br> &nbsp;&nbsp;&nbsp;&nbsp; `print(var)`
 Generate new text variable | `gen newtxt = "Some text here"` | `exfile['newtxt'] = 'Some text here'`
 Change text variable value | `replace newtxt = "Newer text that is really looooooong."` | `exfile['newtxt'] = 'Newer text that is really looooooong.'`
-Replace or change text variable based on existing variable | `replace newtxt = substr(newtxt, 1, 10)` <br> or <br> `gen newest = substr(newtxt, 1, 10)` | `exffile['newtxt'] = exfile['newtxt'].str.slice(0,9)` <br> or <br> `exffile['newtxt'] = exfile['newtxt'].str.slice(0,9)`
+Replace or change text variable based on existing variable | `replace newtxt = substr(newtxt, 1, 10)` <br> or <br> `gen newest = substr(newtxt, 1, 10)` | `exffile['newtxt'] = exfile['newtxt'].str.slice(0,10)` <br> or <br> `exffile['newest'] = exfile['newtxt'].str.slice(0,10)`
 Replace or change value based on existing values | `replace headroom == 9.0 if headroom == 3.0` | `exfile['headroom'] = exfile['headroom'].replace(3.0,9.0)` <br> or <br> `exfile['foreign'] = exfile['foreign'].replace('Domestic','USA')`
 Generate new int variable | `gen newnum = 10` | `exfile['newnum'] = 10`
 Change int variable value | `replace newnum = 222` | `exfile['newnum'] = 222`
