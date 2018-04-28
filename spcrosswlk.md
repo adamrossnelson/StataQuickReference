@@ -31,7 +31,9 @@ Display specific observation | `list make price mpg trunk if _n == 10` | `exfile
 Display observation(s) by logic | `list make price mpg trunk if mpg > 30` | `exfile[exfile['mpg'] > 30]`
 List variable names and/or get variable information | `desc` <br> or <br> `describe` | `exfile.dtypes` and <br> `exfile.describe()` or <br> `for var in exfile.columns:` <br> &nbsp;&nbsp;&nbsp;&nbsp; `print(var)`
 Generate new text variable | `gen newtxt = "Some text here"` | `exfile['newtxt'] = 'Some text here'`
-Change text variable value | `replace newtxt = "Newer text"` | `exfile['newtxt'] = 'Newer text'`
+Change text variable value | `replace newtxt = "Newer text that is really looooooong."` | `exfile['newtxt'] = 'Newer text that is really looooooong.'`
+Replace or change text variable based on existing variable | `replace newtxt = substr(newtxt, 1, 10)` <br> or <br> `gen newest = substr(newtxt, 1, 10)` | `exffile['newtxt'] = exfile['newtxt'].str.slice(0,10)` <br> or <br> `exffile['newest'] = exfile['newtxt'].str.slice(0,10)`
+Replace or change value based on existing values | `replace headroom == 9.0 if headroom == 3.0` | `exfile['headroom'] = exfile['headroom'].replace(3.0,9.0)` <br> or <br> `exfile['foreign'] = exfile['foreign'].replace('Domestic','USA')`
 Generate new int variable | `gen newnum = 10` | `exfile['newnum'] = 10`
 Change int variable value | `replace newnum = 222` | `exfile['newnum'] = 222`
 Generate dummy based on text variable | `gen fgn = (foreign == "Foreign")` | `exfile['fgn'] = np.where(exfile['foreign']=='Foreign', 1, 0)`
@@ -105,10 +107,6 @@ exfile_sex = exfile_sex.pivot_table(index='id', values='sex').reset_index()
 exfile3 = pd.merge(exfile_sex, exfile2, on='id')
 exfile3
 ```
-
-
-exfile2 = exfile.pivot_table(values=['sex','inc','ue'], columns='year', index='id')
-
 
 ## Also useful
 
