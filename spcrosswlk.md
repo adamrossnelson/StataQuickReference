@@ -18,6 +18,8 @@ pd.set_option('display.max_rows', 8)
 
 (*Side note, if anyone knows how to make multi-line code blocks in a markdown table with syntax highlighting. Let me know.*)
 
+(*Another side note, at least one programmer has provided the [option to execute Stata commands from Python](https://www.stata.com/meeting/columbus15/abstracts/materials/columbus15_childs.pdf).*)
+
 ## Starting Out
 
 Description | Stata Code | Pandas Code
