@@ -7,15 +7,17 @@
     - [2.1. Fictional Grade Point Average Data](#21-fictional-grade-point-average-data)
     - [2.2. Examples related to plotting images and figures](#22-examples-related-to-plotting-images-and-figures)
         - [2.2.1. BasicPlotting.do](#221-basicplottingdo)
-        - [2.2.2. marginstrend.do](#222-marginstrenddo)
-        - [2.2.3. geoplotipeds.do](#223-geoplotipedsdo)
-        - [2.2.4. Facradar.do](#224-facradardo)
-        - [2.2.5. GetStataSchemes.do](#225-getstataschemesdo)
+        - [2.2.2. Stacked area chart StackArea.do](#222-stacked-area-chart-stackareado)
+        - [2.2.3. marginstrend.do](#223-marginstrenddo)
+        - [2.2.4. geoplotipeds.do](#224-geoplotipedsdo)
+        - [2.2.5. Facradar.do](#225-facradardo)
+        - [2.2.6. GetStataSchemes.do](#226-getstataschemesdo)
     - [2.3. ProgArgs.do](#23-progargsdo)
     - [2.4. renvarlabs.do](#24-renvarlabsdo)
-    - [2.5. md_demo.do](#25-mddemodo)
+    - [2.5. md_demo.do](#25-md_demodo)
     - [2.6. asciiadam.do](#26-asciiadamdo)
-- [3. License](#3-license)
+- [3. Stata to Pandas Cross-Walk](#3-stata-to-pandas-cross-walk)
+- [4. License](#4-license)
 
 <!-- /TOC -->
 
@@ -46,7 +48,16 @@ do https://raw.githubusercontent.com/adamrossnelson/StataQuickReference/master/p
 use https://github.com/adamrossnelson/StataQuickReference/raw/master/exampledata/ExampleIPEDS.dta
 ```
 
-### 2.2.2. marginstrend.do
+### 2.2.2. Stacked area chart StackArea.do
+
+Demonstrates production of a stacked area chart in Stata. Also demonstrates dropping a standard legend in favor of explanatory text over stacked areas/regious.
+
+```Stata
+// To run from command line:
+do https://raw.githubusercontent.com/adamrossnelsonStataQuickReference/master/plotting/StackArea.do
+```
+
+### 2.2.3. marginstrend.do
 
 This do file demonstrates using margins and marginsplot to visualize trends using Stata. Data is fictional.
 ```Stata
@@ -54,7 +65,7 @@ This do file demonstrates using margins and marginsplot to visualize trends usin
 do https://raw.githubusercontent.com/adamrossnelson/StataQuickReference/master/plotting/marginstrend.do
 ```
 
-### 2.2.3. geoplotipeds.do
+### 2.2.4. geoplotipeds.do
 
 Using the longitude and latitude variables stored in IPEDS data this routine builds a visualization of the institutions located in North America.
 
@@ -63,7 +74,7 @@ Using the longitude and latitude variables stored in IPEDS data this routine bui
 do https://raw.githubusercontent.com/adamrossnelson/StataQuickReference/master/plotting/geoplotipeds.do
 ```
 
-### 2.2.4. Facradar.do
+### 2.2.5. Facradar.do
 
 Another plotting demonstration. Demonstrates genderating a radar plot. Requires the `radar` package which is available at `http://fmwww.bc.edu/repec/bocode/r/radar.html`. The example given in `radar` documentation shows the package excels at plotting a categorical y (such as automobile make) and a continuous x (automobile weight).
 
@@ -71,7 +82,7 @@ This implementatino plots a categorical y (such as a series of factor scores) an
 
 **Help wanted note:** Seeking collaborator in convering `facradar.do` into Stata `.ado` package.
 
-### 2.2.5. GetStataSchemes.do
+### 2.2.6. GetStataSchemes.do
 
 This file is a quick routine that will install a range of graphic schemes. Stata's raphic schemes are a useful way to improve the visual presentation of data.
 
@@ -125,11 +136,11 @@ To execute from command line (or do file):
 do https://raw.githubusercontent.com/adamrossnelson/StataQuickReference/master/asciiadam.do
 ```
 
-# Stata to Pandas Cross-Walk
+# 3. Stata to Pandas Cross-Walk
 
 This repo also provides a [Stata to Pandas Cross-Walk](https://github.com/adamrossnelson/StataQuickReference/blob/master/spcrosswlk.md)
 
-# 3. License
+# 4. License
 
 Except where otherwise specifically noted:
 
