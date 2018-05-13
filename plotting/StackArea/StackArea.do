@@ -11,8 +11,8 @@ clear all
 input year str3 quarter day planning tooling science dissem keep
 	1	Q1	0	30	30	30	10	1
 	1	Q2	90	22	32	28	18	1
-	1	Q3	180	20	18	37	25	1
-	1	Q4	270	15	12	48	25	1
+	1	Q3	180	20	19	36	25	1
+	1	Q4	270	15	15	45	25	1
 	2	Q5	360	10	20	50	20	1
 	2	Q6	450	10	10	60	20	1
 	2	Q7	540	30	5	35	30	1
