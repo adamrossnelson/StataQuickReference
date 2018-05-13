@@ -54,6 +54,8 @@ text(55 3 "Science", place(e)) ///
 text(20 4 "Tooling", place(e)) ///
 text(8 7 "Planning", place(e)) name(five, replace)
 
+graph export "C:\GITS\StataQuickReference\plotting\plt_five.png", as(png) replace
+
 twoway (area diss quar, fcolor(dkgreen) lwidth(vvthin)) ///
 (area scie quar, fcolor(white%20) lwidth(vvthin)) ///
 (area tool quar, fcolor(white%20) lwidth(vvthin)) ///
@@ -66,6 +68,8 @@ text(90 1.5 "Dissemination", place(e)) ///
 text(55 2 "Science", place(e)) ///
 text(30 2.5 "Tooling", place(e)) ///
 text(10 3.25 "Planning", place(e)) name(two, replace)
+
+graph export "C:\GITS\StataQuickReference\plotting\plt_two.png", as(png) replace
 
 twoway (area diss quar, fcolor(dkgreen) lwidth(vvthin)) ///
 (area scie quar, fcolor(white%20) lwidth(vvthin)) ///
@@ -80,4 +84,4 @@ text(50 9.5 "Science", place(e)) ///
 text(29 11.5 "Tooling", place(e)) ///
 text(12 14.5 "Planning", place(e)) name(threefive, replace)
 
-
+graph export "C:\GITS\StataQuickReference\plotting\plt_threefive.png", as(png) replace
