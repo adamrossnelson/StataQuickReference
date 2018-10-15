@@ -1,6 +1,6 @@
 # 1. Table of Coneents
 
-Fellow Stata enthusiest (Kyle Barron)[https://kylebarron.github.io/] has developed and made available `stata_kernel` which makes Stata available in Jupyter Notebooks. Check (here)[https://kylebarron.github.io/stata_kernel/getting_started/] for more information on set up and installation. Otherwise (here)[https://github.com/adamrossnelson/StataQuickReference/blob/master/StataNotebookExample.ipynb] is a working example.
+Fellow Stata enthusiest [Kyle Barron](https://kylebarron.github.io/) has developed and made available `stata_kernel` which makes Stata available in Jupyter Notebooks. Check [here](https://kylebarron.github.io/stata_kernel/getting_started/) for more information on set up and installation. Otherwise [here](https://github.com/adamrossnelson/StataQuickReference/blob/master/StataNotebookExample.ipynb) is a working example.
 
 <!-- TOC -->
 
