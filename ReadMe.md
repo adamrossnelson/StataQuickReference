@@ -19,7 +19,7 @@ Fellow Stata enthusiest [Kyle Barron](https://kylebarron.github.io/) has develop
     - [2.5. md_demo.do](#25-md_demodo)
     - [2.6. asciiadam.do](#26-asciiadamdo)
 - [3. Stata to Pandas Cross-Walk](#3-stata-to-pandas-cross-walk)
-- [4. Importing JSON to Stata](#4-Importing-JSON-to-Stata)
+- [4. Importing JSON to Stata](#4-importing-json-to-stata)
 - [5. License](#5-license)
 
 <!-- /TOC -->
