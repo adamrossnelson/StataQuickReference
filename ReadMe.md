@@ -19,7 +19,8 @@ Fellow Stata enthusiest [Kyle Barron](https://kylebarron.github.io/) has develop
     - [2.5. md_demo.do](#25-md_demodo)
     - [2.6. asciiadam.do](#26-asciiadamdo)
 - [3. Stata to Pandas Cross-Walk](#3-stata-to-pandas-cross-walk)
-- [4. License](#4-license)
+- [4. Importing JSON to Stata](#4-Importing-JSON-to-Stata)
+- [5. License](#5-license)
 
 <!-- /TOC -->
 
@@ -142,7 +143,27 @@ do https://raw.githubusercontent.com/adamrossnelson/StataQuickReference/master/a
 
 This repo also provides a [Stata to Pandas Cross-Walk](https://github.com/adamrossnelson/StataQuickReference/blob/master/spcrosswlk.md)
 
-# 4. License
+# 4. Importing JSON to Stata
+
+This  task is not as straight forward as it should or could be. At least two excellent packages exist including [inshetjson](https://ideas.repec.org/c/boc/bocode/s457407.html) and [jsonio](https://wbuchanan.github.io/StataJSON/). Good advice has been written in the [discussion boards](https://www.statalist.org/forums/forum/general-stata-discussion/general/1357829-creating-a-stata-data-file-from-a-json-formatted-file) (just one example) too.
+
+For myself, I often find it less difficult and more reliable to use Python's Pandas library. For some use cases this approach is necessary. As of Fall 2018, Pandas does not support Stata's `strL` data type. This means that if any text fields in the JSON data contain more than 2045 characters it is not possible to go directly from `JSON` to Stata `dta`. This issue has been documented (https://github.com/pandas-dev/pandas/issues/16450) - and is expected to be in a future stable release.
+
+Once support for Stata's `strL` data type moves into the latest stable release the first of the two code samples below should be sufficient. Also, if all text fields are 2045 characters or less the following code is sufficient to produce a Stata `dta` file:
+
+```Python
+import pandas as pd
+pd.read_json('DemoFileRaw.json').to_stata('DemoFileRaw.dta', write_index=False)
+```
+
+However, where there are text fields that exceed 2045 characters it is necessary to first convert to MS Excel `xlsx` which can then be imported at Stata's command line:
+
+```Python
+import pandas as pd
+pd.read_json('DemoFileRaw.json').to_excel(pd.ExcelWriter('DemoFileRaw.xlsx'), index=False)
+```
+
+# 5. License
 
 Except where otherwise specifically noted:
 
