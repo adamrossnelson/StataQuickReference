@@ -35,6 +35,8 @@ List variable names and/or get variable information | `desc` <br> or <br> `descr
 Generate new text variable | `gen newtxt = "Some text here"` | `exfile['newtxt'] = 'Some text here'`
 Change text variable value | `replace newtxt = "Newer text that is really looooooong."` | `exfile['newtxt'] = 'Newer text that is really looooooong.'`
 Replace or change text variable based on existing variable | `replace newtxt = substr(newtxt, 1, 10)` <br> or <br> `gen newest = substr(newtxt, 1, 10)` | `exffile['newtxt'] = exfile['newtxt'].str.slice(0,10)` <br> or <br> `exffile['newest'] = exfile['newtxt'].str.slice(0,10)`
+Split text variables | `split make, parse(" ")` | `exfile['ms'] = exfile['make'].str.split(' ')` *
+Replace text in variables | `replace make = subinstr(make," ","-",.)` | `exfile['make'] = exfile['make'].str.replace(' ', '-')`
 Replace or change value based on existing values | `replace headroom == 9.0 if headroom == 3.0` | `exfile['headroom'] = exfile['headroom'].replace(3.0,9.0)` <br> or <br> `exfile['foreign'] = exfile['foreign'].replace('Domestic','USA')`
 Generate new int variable | `gen newnum = 10` | `exfile['newnum'] = 10`
 Change int variable value | `replace newnum = 222` | `exfile['newnum'] = 222`
@@ -49,7 +51,10 @@ Delete observation(s) by logic | `drop if mpg > 30` <br> or <br> `keep if mpg < 
 Sorting by a variable ascending | `sort price` | `exfile = exfile.sort_values(by['price'])`
 Sorting by a variable descending | `gsort -price` | `exfile = exfile.sort_values(by['price'], ascending=False)`
 Display summary statistics (specific variables) | `sum price mpg weight` | `exfile[['price','mpg','weight']].describe()` <br> or <br> `exfile[['price','mpg','weight']].describe().T`
+Enstring numbers | `tostring price, gen(pricestr)` | `exfile['price_str'] = exfile['price'].astype(str)`
+Destring strings | `destring pricestr, gen(pricenum)` | `exfile['price_num'] = exfile['price_str'].astype(int)`
 
+* *Splits behave differently in Stata & Pandas. More development needed here.*
 
 ## Categorical Factor Variables
 
