@@ -176,7 +176,7 @@ df = obj_to_string(df)
 Acceptable variable names in Stata is more limited than those in Pandas. To help `pandas.DataFrame.to_stata` is able to make corrections. However, sometimes the default corrections might not be preferred. A solution is to rename columns before writing to Stata:
 
 ```Python
-# This function cleans a string so that only letters a-z and digits 0-9 will remain. 
+# This function cleans a string so that only letters a-z and digits 0-9  remain. 
 # Also removes spaces. Optionally case argument controls variable name character case.
 def clean_word(word, *, case='lower'):
     import re
@@ -190,6 +190,40 @@ def clean_word(word, *, case='lower'):
         raise Exception('Argument (case) incorrectly specified. \
                         Default is "lower" Alternate options \
                         are "upper" and "asis".')
+
+# This funciton cleans list of column names so that only letters a-z and digits 0-9 
+# remain. Also removes spaces. Makes sure each column name is unique. If duplicats
+# present will print warning with explanation.
+def clean_cols(clst, *, case='lower'):
+    import warnings
+    newcols = []
+    for col in clst:
+        newcols.append(clean_word(col, case=case))
+    if len(clst) != len(set(newcols)):
+        warnings.warn('\nDuplicates in column list. \
+                      \nDuplicates appended with location.')
+        newestcols = []
+        suffix = 0
+        for i in newcols:
+            if newcols.count(i) > 1:
+                newestcols.append(i + str(suffix))
+            else:
+                newestcols.append(i)
+            suffix += 1
+        return(newestcols)
+    else:
+        return(newcols)
+
+# Using the above functions.
+df.columns = local_support_code.clean_cols(df.columns)
+
+# or
+
+df.columns = local_support_code.clean_cols(df.columns, case='upper')
+
+# or 
+
+df.columns = local_support_code.clean_cols(df.columns, case='asis')
 ```
 
 # 5. Also useful
