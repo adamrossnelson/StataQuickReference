@@ -53,7 +53,7 @@ Display data | `list` | `exfile`
 Display subset of observations | `list in 1/10` <br> or <br> `list in 10/20` | `exfile.head(n=10)` <br> or <br> `exfile[9:20]`
 Display subset of variables | `list make price mpg trunk` | `exfile[['make','price','mpg','trunk']]`
 Display subset of obs & vars | `list make price mpg trunk in 1/10` | `exfile[['make','price','mpg','trunk']].head(n=10)`
-Display specific observation | `list make price mpg trunk if _n == 10` | The most stata_esque_ will be <br> `exfile.iloc[9]` <br> also available is `df.loc` when  
+Display specific observation | `list make price mpg trunk if _n == 10` | The most Stata-like will be <br> `exfile.iloc[9]` <br> also available is `df.loc` when  
 Display observation(s) by logic | `list make price mpg trunk if mpg > 30` | `exfile[exfile['mpg'] > 30]`
 List variable names and/or get variable information | `desc` <br> or <br> `describe` | `exfile.dtypes` and <br> `exfile.describe()` or <br> `for var in exfile.columns:` <br> &nbsp;&nbsp;&nbsp;&nbsp; `print(var)`
 Generate new text variable | `gen newtxt = "Some text here"` | `exfile['newtxt'] = 'Some text here'`
