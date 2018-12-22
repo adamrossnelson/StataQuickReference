@@ -111,7 +111,7 @@ Append and mark sources | `append using http://www.stata-press.com/data/r15/capo
 Description | Stata Code | Pandas Code
 ------------|------------|------------
 Load example data | `use http://www.stata-press.com/data/r15/reshape1.dta` | `exfile = pd.read_stata('http://www.stata-press.com/data/r15/reshape1.dta')`
-Reshape from wide to long | `reshape long inc ue, i(id) j(year)` | `exfile = pd.wide_to_long(exfile, stubnames=['inc','ue'], i=['id','sex'], j='year')`
+Reshape from wide to long | `reshape long inc ue, i(id) j(year)` | `exfile = pd.wide_to_long(exfile, stubnames=['inc','ue'], i=['id','sex'], j='year')` <br> for more Stata-like then: <br> `exfile = exfile.reset_index(0).reset_index(0).reset_index(0)`
 Reshape long to wide | `reshape wide inc ue, i(id) j(year)` | Quick version: <br> `exfile2 = exfile.pivot_table(values=['sex','inc','ue'], columns='year', index='id')`
 
 While Pandas provides `wide_to_long` option, it does not provide a `long_to_wide` option. Below is code that will produce a long to wide reshape more consistent with Stata's results.
@@ -161,7 +161,7 @@ df['Problematic_Txt'] = df['Problematic_Txt'].apply(fix_char_ct)
 Another frequent problem is that `pandas.DataFrame.to_stata` seems to have trouble writing some the object data type. A solution to this trouble is:
 
 ```Python
-# Define function that finds object data types, converts to strong.
+# Define function that finds object data types, converts to string.
 def obj_to_string(df):
     for obj_col in list(df.select_dtypes(include=['object']).columns):
         df[obj_col] = df[obj_col].astype(str)
@@ -215,15 +215,15 @@ def clean_cols(clst, *, case='lower'):
         return(newcols)
 
 # Using the above functions.
-df.columns = local_support_code.clean_cols(df.columns)
+df.columns = clean_cols(df.columns)
 
 # or
 
-df.columns = local_support_code.clean_cols(df.columns, case='upper')
+df.columns = clean_cols(df.columns, case='upper')
 
 # or 
 
-df.columns = local_support_code.clean_cols(df.columns, case='asis')
+df.columns = clean_cols(df.columns, case='asis')
 ```
 
 # 5. Also useful
