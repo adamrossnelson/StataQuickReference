@@ -5,17 +5,18 @@
 - [1. Stata to Pandas Cross-Walk](#1-stata-to-pandas-cross-walk)
 - [2. Introduction](#2-introduction)
 - [3. Pendng & Unresolved Issues](#3-pendng--unresolved-issues)
-    - [3.1. Starting Out](#31-starting-out)
-    - [3.2. Categorical Factor Variables](#32-categorical-factor-variables)
-    - [3.3. Merge Datasets](#33-merge-datasets)
-    - [3.4. Append Datasets](#34-append-datasets)
-    - [3.5. Reshape Datasets](#35-reshape-datasets)
-- [4. Exporting Pandas data to Stata](#4-exporting-pandas-data-to-stata)
-    - [4.1. Problems With Unicode](#41-problems-with-unicode)
-    - [4.2. Converting Object Data Types](#42-converting-object-data-types)
-    - [4.3. Handling Column Names](#43-handling-column-names)
-- [5. Also useful](#5-also-useful)
-- [6. Questions, Comments, & Contributions](#6-questions-comments--contributions)
+- [4. Data Management](#4-data-management)
+    - [4.1. Starting Out](#41-starting-out)
+    - [4.2. Categorical Factor Variables](#42-categorical-factor-variables)
+    - [4.3. Merge Datasets](#43-merge-datasets)
+    - [4.4. Append Datasets](#44-append-datasets)
+    - [4.5. Reshape Datasets](#45-reshape-datasets)
+- [5. Exporting Pandas data to Stata](#5-exporting-pandas-data-to-stata)
+    - [5.1. Problems With Unicode](#51-problems-with-unicode)
+    - [5.2. Converting Object Data Types](#52-converting-object-data-types)
+    - [5.3. Handling Column Names](#53-handling-column-names)
+- [6. Also useful](#6-also-useful)
+- [7. Questions, Comments, & Contributions](#7-questions-comments--contributions)
 
 <!-- /TOC -->
 
@@ -25,7 +26,7 @@ This repo uses Stata example data sets to crosswalk a variety of Stata-Pandas eq
   * `auto2.dta` available at http://www.stata-press.com/data/r15/auto2.dta 
   * `hbp2.dta` available at http://www.stata-press.com/data/r15/hbp2.dta
   * `autoexpense.dta` available at http://www.stata-press.com/data/r15/autoexpense.dta
-  * `autosize.dta` available at http://www.stata-press.com/data/r15/autoexpense.dta
+  * `autosize.dta` available at http://www.stata-press.com/data/r15/autosize.dta
 
 For pandas, this crosswalk assumes the following import statements:
 
@@ -44,7 +45,9 @@ pd.set_option('display.max_rows', 8)
 * Also helpful is the [Jupyter Notebooks Kernel](https://kylebarron.github.io/stata_kernel/).
 * Adding a hilight for those having trouble exporting Pandas data to Stata at below.
 
-## 3.1. Starting Out
+# 4. Data Management
+
+## 4.1. Starting Out
 
 Description | Stata Code | Pandas Code
 ------------|------------|------------
@@ -80,7 +83,7 @@ Destring strings | `destring pricestr, gen(pricenum)` | `exfile['price_num'] = e
 
 * *Splits behave differently in Stata & Pandas. More development needed here.*
 
-## 3.2. Categorical Factor Variables
+## 4.2. Categorical Factor Variables
 
 Description | Stata Code | Pandas Code
 ------------|------------|------------
@@ -91,22 +94,22 @@ Three-way tabulation | `table year race sex` | `pd.crosstab(exfile['year'], [exf
 Encode a categorical (That was originally string) | `encode sex, gen(sex_cat)` | `exfile['sex_cat'] = exfile['sex'].astype('category')` <br> then <br> `exfile['sex_cat_code'] = exfile['sex_cat'].cat.codes`
 Create an array of dummies from categorical | `tab sex, gen(sex_)` | `exfile = pd.get_dummies(exfile, columns=['sex'])`
 
-## 3.3. Merge Datasets
+## 4.3. Merge Datasets
 
 Description | Stata Code | Pandas Code
 ------------|------------|------------
 Load example data | `use http://www.stata-press.com/data/r15/autoexpense.dta`<br> and <br> `use http://www.stata-press.com/data/r15/autosize.dta` | `autoexp = pd.read_stata('http://www.stata-press.com/data/r15/autoexpense.dta')` <br> and <br> `autosiz = pd.read_stata('http://www.stata-press.com/data/r15/autosize.dta')`
 Merge autoexpense autosize (using make as the key variable) | After loading `autosize.dta` <br> `merge 1:1 make using http://www.stata-press.com/data/r15/autoexpense.dta` | `pd.merge(autoexp,autosiz, on='make',how='outer')`
 
-## 3.4. Append Datasets
+## 4.4. Append Datasets
 
 Description | Stata Code | Pandas Code
 ------------|------------|------------
 Load example data | `use http://www.stata-press.com/data/r15/capop.dta`<br> and <br> `use http://www.stata-press.com/data/r15/txpop.dta` | `capop = pd.read_stata('http://www.stata-press.com/data/r15/capop.dta')` <br> and <br> `txpop = pd.read_stata('http://www.stata-press.com/data/r15/txpop.dta')`
-Append CA population with TX population | After loading `txpop.dta` <br> `append using http://www.stata-press.com/data/r15/capop.dta` | `pd.concat([capop,txpop])`
+Append CA population with TX population | After loading `txpop.dta` <br> `append using http://www.stata-press.com/data/r15/capop.dta` | `pd.concat([capop,txpop])` <br> or <br> `pd.concat([capop,txpop]).resent_index()`
 Append and mark sources | `append using http://www.stata-press.com/data/r15/capop.dta, generate(source)` | `pd.concat([capop,txpop],keys=['ca','tx'])`
 
-## 3.5. Reshape Datasets
+## 4.5. Reshape Datasets
 
 Description | Stata Code | Pandas Code
 ------------|------------|------------
@@ -139,9 +142,9 @@ exfile3 = pd.merge(exfile_sex, exfile2, on='id')
 exfile3
 ```
 
-# 4. Exporting Pandas data to Stata
+# 5. Exporting Pandas data to Stata
 
-## 4.1. Problems With Unicode
+## 5.1. Problems With Unicode
 
 A problem that happens when saving to Stata is that `pandas.DataFrame.to_stata` sometimes writes unicode characters even though the format used by `pandas.DataFrame.to_stata` does not support unicode. Documented on [this issue](https://github.com/pandas-dev/pandas/issues/23573#issuecomment-441341673). A simplistc explanation is that unicode chracters can throw off the expected chracter count in Stata data. A crude solution is to make sure each chracter is only one chracter space:
 
@@ -156,9 +159,9 @@ def fix_char_ct(bad_text):
 # Use apply to clean problematic text.
 df['Problematic_Txt'] = df['Problematic_Txt'].apply(fix_char_ct)
 ```
-## 4.2. Converting Object Data Types
+## 5.2. Converting Object Data Types
 
-Another frequent problem is that `pandas.DataFrame.to_stata` seems to have trouble writing some the object data type. A solution to this trouble is:
+Another frequent problem is that `pandas.DataFrame.to_stata` seems to have trouble writing the object data type. A solution to this trouble is:
 
 ```Python
 # Define function that finds object data types, converts to string.
@@ -171,13 +174,13 @@ def obj_to_string(df):
 df = obj_to_string(df)
 ```
 
-## 4.3. Handling Column Names
+## 5.3. Handling Column Names
 
 Acceptable variable names in Stata is more limited than those in Pandas. To help `pandas.DataFrame.to_stata` is able to make corrections. However, sometimes the default corrections might not be preferred. A solution is to rename columns before writing to Stata:
 
 ```Python
 # This function cleans a string so that only letters a-z and digits 0-9  remain. 
-# Also removes spaces. Optionally case argument controls variable name character case.
+# Also removes spaces. Optional case argument controls variable name character case.
 def clean_word(word, *, case='lower'):
     import re
     if case == 'lower':
@@ -226,13 +229,17 @@ df.columns = clean_cols(df.columns, case='upper')
 df.columns = clean_cols(df.columns, case='asis')
 ```
 
-# 5. Also useful
+# 6. Also useful
 
 * [Pandas cheatsheet](https://s3.amazonaws.com/assets.datacamp.com/blog_assets/PandasPythonForDataScience.pdf)
 * [Stata cheesheets](https://github.com/adamrossnelson/StataQuickReference/blob/master/chtshts/AllCheatSheets.pdf)
 * [Guide to Encoding Categorical Values in Python](http://pbpython.com/categorical-encoding.html)
+* Ordinary Least Squares Regression Starting Points
+  * [SciKit Learn linear regression example](https://scikit-learn.org/stable/auto_examples/linear_model/plot_ols.html).
+  * [Simple & multiple linear regression in Python](https://towardsdatascience.com/simple-and-multiple-linear-regression-in-python-c928425168f9)
+  * [Regression with Pandas (Stackoverflow Post)](https://stackoverflow.com/questions/19991445/run-an-ols-regression-with-pandas-data-frame)
 
-# 6. Questions, Comments, & Contributions
+# 7. Questions, Comments, & Contributions
 
 Send me your questions, comments, contributions, and tell me what I did wrong.
 
