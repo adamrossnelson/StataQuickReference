@@ -238,6 +238,7 @@ df.columns = clean_cols(df.columns, case='asis')
   * [SciKit Learn linear regression example](https://scikit-learn.org/stable/auto_examples/linear_model/plot_ols.html).
   * [Simple & multiple linear regression in Python](https://towardsdatascience.com/simple-and-multiple-linear-regression-in-python-c928425168f9)
   * [Regression with Pandas (Stackoverflow Post)](https://stackoverflow.com/questions/19991445/run-an-ols-regression-with-pandas-data-frame)
+  * [python stats models - quadratic term in regression](https://stackoverflow.com/a/36539157/9572143)
 
 # 7. Questions, Comments, & Contributions
 
