@@ -106,7 +106,7 @@ Merge autoexpense autosize (using make as the key variable) | After loading `aut
 Description | Stata Code | Pandas Code
 ------------|------------|------------
 Load example data | `use http://www.stata-press.com/data/r15/capop.dta`<br> and <br> `use http://www.stata-press.com/data/r15/txpop.dta` | `capop = pd.read_stata('http://www.stata-press.com/data/r15/capop.dta')` <br> and <br> `txpop = pd.read_stata('http://www.stata-press.com/data/r15/txpop.dta')`
-Append CA population with TX population | After loading `txpop.dta` <br> `append using http://www.stata-press.com/data/r15/capop.dta` | `pd.concat([capop,txpop])` <br> or <br> `pd.concat([capop,txpop]).resent_index()`
+Append CA population with TX population | After loading `txpop.dta` <br> `append using http://www.stata-press.com/data/r15/capop.dta` | `pd.concat([capop,txpop])` <br> or <br> `pd.concat([capop,txpop]).reset_index()`
 Append and mark sources | `append using http://www.stata-press.com/data/r15/capop.dta, generate(source)` | `pd.concat([capop,txpop],keys=['ca','tx'])`
 
 ## 4.5. Reshape Datasets
