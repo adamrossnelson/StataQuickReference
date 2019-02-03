@@ -16,6 +16,8 @@
     - [5.2. Converting Object Data Types](#52-converting-object-data-types)
     - [5.3. Handling Column Names](#53-handling-column-names)
 - [6. Also useful](#6-also-useful)
+    - [6.1. Getting Fancy](#61-getting-fancy)
+    - [6.2. External Resouces](#62-external-resouces)
 - [7. Questions, Comments, & Contributions](#7-questions-comments--contributions)
 
 <!-- /TOC -->
@@ -230,6 +232,247 @@ df.columns = clean_cols(df.columns, case='asis')
 ```
 
 # 6. Also useful
+
+## 6.1. Getting Fancy
+
+Quickly display table (a Pandas DataFrame) that lists variables, variable descriptions (variable labels), and summary statistics.
+
+```python
+import pandas as pd
+
+auto = 'http://www.stata-press.com/data/r15/auto.dta'
+reader = pd.io.stata.StataReader(auto)
+exfile = pd.read_stata(auto)
+
+pd.merge(pd.DataFrame(reader.variable_labels(), index=['Label']).transpose(), 
+         exfile.describe(include='all').transpose(), 
+         left_index=True, 
+         right_index=True)
+```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Label</th>
+      <th>count</th>
+      <th>unique</th>
+      <th>top</th>
+      <th>freq</th>
+      <th>mean</th>
+      <th>std</th>
+      <th>min</th>
+      <th>25%</th>
+      <th>50%</th>
+      <th>75%</th>
+      <th>max</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>make</th>
+      <td>Make and Model</td>
+      <td>74</td>
+      <td>74</td>
+      <td>Pont. Le Mans</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>price</th>
+      <td>Price</td>
+      <td>74</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>6165.26</td>
+      <td>2949.5</td>
+      <td>3291</td>
+      <td>4220.25</td>
+      <td>5006.5</td>
+      <td>6332.25</td>
+      <td>15906</td>
+    </tr>
+    <tr>
+      <th>mpg</th>
+      <td>Mileage (mpg)</td>
+      <td>74</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>21.2973</td>
+      <td>5.7855</td>
+      <td>12</td>
+      <td>18</td>
+      <td>20</td>
+      <td>24.75</td>
+      <td>41</td>
+    </tr>
+    <tr>
+      <th>rep78</th>
+      <td>Repair Record 1978</td>
+      <td>69</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>3.4058</td>
+      <td>0.989932</td>
+      <td>1</td>
+      <td>3</td>
+      <td>3</td>
+      <td>4</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>headroom</th>
+      <td>Headroom (in.)</td>
+      <td>74</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2.99324</td>
+      <td>0.845995</td>
+      <td>1.5</td>
+      <td>2.5</td>
+      <td>3</td>
+      <td>3.5</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>trunk</th>
+      <td>Trunk space (cu. ft.)</td>
+      <td>74</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>13.7568</td>
+      <td>4.2774</td>
+      <td>5</td>
+      <td>10.25</td>
+      <td>14</td>
+      <td>16.75</td>
+      <td>23</td>
+    </tr>
+    <tr>
+      <th>weight</th>
+      <td>Weight (lbs.)</td>
+      <td>74</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>3019.46</td>
+      <td>777.194</td>
+      <td>1760</td>
+      <td>2250</td>
+      <td>3190</td>
+      <td>3600</td>
+      <td>4840</td>
+    </tr>
+    <tr>
+      <th>length</th>
+      <td>Length (in.)</td>
+      <td>74</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>187.932</td>
+      <td>22.2663</td>
+      <td>142</td>
+      <td>170</td>
+      <td>192.5</td>
+      <td>203.75</td>
+      <td>233</td>
+    </tr>
+    <tr>
+      <th>turn</th>
+      <td>Turn Circle (ft.)</td>
+      <td>74</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>39.6486</td>
+      <td>4.39935</td>
+      <td>31</td>
+      <td>36</td>
+      <td>40</td>
+      <td>43</td>
+      <td>51</td>
+    </tr>
+    <tr>
+      <th>displacement</th>
+      <td>Displacement (cu. in.)</td>
+      <td>74</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>197.297</td>
+      <td>91.8372</td>
+      <td>79</td>
+      <td>119</td>
+      <td>196</td>
+      <td>245.25</td>
+      <td>425</td>
+    </tr>
+    <tr>
+      <th>gear_ratio</th>
+      <td>Gear Ratio</td>
+      <td>74</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>3.01486</td>
+      <td>0.456287</td>
+      <td>2.19</td>
+      <td>2.73</td>
+      <td>2.955</td>
+      <td>3.3525</td>
+      <td>3.89</td>
+    </tr>
+    <tr>
+      <th>foreign</th>
+      <td>Car type</td>
+      <td>74</td>
+      <td>2</td>
+      <td>Domestic</td>
+      <td>52</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+## 6.2. External Resouces
 
 * [Pandas cheatsheet](https://s3.amazonaws.com/assets.datacamp.com/blog_assets/PandasPythonForDataScience.pdf)
 * [Stata cheesheets](https://github.com/adamrossnelson/StataQuickReference/blob/master/chtshts/AllCheatSheets.pdf)
