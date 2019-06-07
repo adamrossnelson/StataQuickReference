@@ -51,6 +51,12 @@ do https://raw.githubusercontent.com/adamrossnelson/StataQuickReference/master/p
 use https://github.com/adamrossnelson/StataQuickReference/raw/master/exampledata/ExampleIPEDS.dta
 ```
 
+Want to make your own schemes? Vince Wiggins of StataCorp provided a walk-through on this topic.
+
+- [Scheming your way to consistent graphs](https://econpapers.repec.org/paper/bocusug06/11.htm).
+- Vince's presentation materials [schemetalk.zip](http://repec.org/usug2006/schemetalk.zip).
+- Also worth noting, [clever use of SMCL as a slide deck](http://repec.org/usug2006/VW_README.txt).
+
 ### 2.2.2. Stacked area chart StackArea.do
 
 Demonstrates production of a stacked area chart in Stata. Also demonstrates dropping a standard legend in favor of explanatory text over stacked areas/regious.
