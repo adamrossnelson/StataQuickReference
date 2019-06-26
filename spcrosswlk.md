@@ -16,8 +16,9 @@
     - [5.2. Converting Object Data Types](#52-converting-object-data-types)
     - [5.3. Handling Column Names](#53-handling-column-names)
 - [6. Also useful](#6-also-useful)
-    - [6.1. Getting Fancy](#61-getting-fancy)
-    - [6.2. External Resouces](#62-external-resouces)
+    - [6.1. Summary Statistics](#61-summary-statistics)
+    - [6.2. Advanced Summary Stats With Pandas Profiling](#62-advanced-summary-stats-with-pandas-profiling)
+    - [6.3. External Resouces](#63-external-resouces)
 - [7. Questions, Comments, & Contributions](#7-questions-comments--contributions)
 
 <!-- /TOC -->
@@ -45,7 +46,7 @@ pd.set_option('display.max_rows', 8)
 * If anyone knows how to make multi-line code blocks in a markdown table with syntax highlighting. Let me know.
 * At least one programmer has provided the [option to execute Stata commands from Python](https://www.stata.com/meeting/columbus15/abstracts/materials/columbus15_childs.pdf).
 * Also helpful is the [Jupyter Notebooks Kernel](https://kylebarron.github.io/stata_kernel/).
-* Adding a hilight for those having trouble exporting Pandas data to Stata at below.
+* Adding a hilight for those having trouble [Exporting Pandas data to Stata](#5-exporting-pandas-data-to-stata) below.
 
 # 4. Data Management
 
@@ -233,7 +234,7 @@ df.columns = clean_cols(df.columns, case='asis')
 
 # 6. Also useful
 
-## 6.1. Getting Fancy
+## 6.1. Summary Statistics
 
 Quickly display table (a Pandas DataFrame) that lists variables, variable descriptions (variable labels), and summary statistics.
 
@@ -458,8 +459,35 @@ pd.merge(pd.DataFrame(reader.variable_labels(), index=['Label']).transpose(),
 </div>
 
 
+## 6.2. Advanced Summary Stats With Pandas Profiling
 
-## 6.2. External Resouces
+This is an implementation of [10 Simple Hacks To Speed... Data Analysis...](https://medium.com/p/10-simple-hacks-to-speed-up-your-data-analysis-in-python-ec18c6396e6b) but with Stata's `auto.dta`. The article's implemenation was pre version 2.0.0. The imlemenation below is 2.0.0+ syntax.
+
+```python
+pip install pandas-profiling
+
+# or
+
+conda install -c anaconda pandas-profiling
+```
+
+```python
+import pandas as pd
+import pandas_profiling
+
+df = pd.read_stata('http://www.stata-press.com/data/r15/auto2.dta')
+
+profile = df.profile_report()
+rejected = profile.get_rejected_variables()
+df.profile_report(title='Stata Auto.dta Pandas Profiled',
+                  correlation_overrides=[rejected])
+profile.to_file(output_file='Stata_Auto.dta_Profile.html')
+```
+
+The `Stata_Auto.dta_Profile.html` output is available [here](Classic_Auto.dta_Profile.html).
+
+
+## 6.3. External Resouces
 
 * [Pandas cheatsheet](https://s3.amazonaws.com/assets.datacamp.com/blog_assets/PandasPythonForDataScience.pdf)
 * [Stata cheesheets](https://github.com/adamrossnelson/StataQuickReference/blob/master/chtshts/AllCheatSheets.pdf)
