@@ -73,7 +73,7 @@ Change int variable value | `replace newnum = 222` | `exfile['newnum'] = 222`
 Generate dummy based on text variable | `gen fgn = (foreign == "Foreign")` | `exfile['fgn'] = np.where(exfile['foreign']=='Foreign', 1, 0)`
 Generate new variable relative to other variable | `gen rtd_disp = displacement / 10` <br> or <br> `gen mpg2 = mpg * mpg` <br> or <br> `gen lprice = ln(price)` | `exfile['rtd_disp'] = exfile['displacement'] / 10` <br> or <br> `exfile['mpg2'] = exfile['mpg'] * exfile['mpg']` <br> or <br> `exfile['lprice'] = np.log10(exfile['price'])`
 Generate new variable equal to _n or index | `gen sorter = _n` | `exfile['sorter'] = np.arange(0,len(exfile.index))`
-Rename a variable | `rename mpg milespg` | Two steps: `exfile['milespg'] = exfile['mpg']` <br> `del exfile['mpg']` <br> One steps: <br> `exfile.rename(columns = {exfile.columns[2]:'milespg'}, inplace=True)`
+Rename a variable | `rename mpg milespg` | Two steps: `exfile['milespg'] = exfile['mpg']` <br> `del exfile['mpg']` <br> One steps: <br> `exfile.rename(columns = {'mpg':'milespg'}, inplace=True)`
 Delete variable(s) | `drop newtxt newnum` | `exfile = exfile.drop(columns=['newtxt','newnum'])`  <br> or <br> `exfile = exfile.drop(['newtxt','newnum'], axis=1)`  <br> or <br> `del exfile['newtxt']` <br> `del exfile['newnum']`
 Keep variable(s) | `keep make price mpg` | `exfile = exfile[['make','price','mpg']]`
 Delete specific observation | `drop if _n = 10` | `exfile = exfile.drop(9)`
