@@ -11,6 +11,7 @@
     - [4.3. Merge Datasets](#43-merge-datasets)
     - [4.4. Append Datasets](#44-append-datasets)
     - [4.5. Reshape Datasets](#45-reshape-datasets)
+    - [4.6. Loops](#46-loops)
 - [5. Exporting Pandas data to Stata](#5-exporting-pandas-data-to-stata)
     - [5.1. Problems With Unicode](#51-problems-with-unicode)
     - [5.2. Converting Object Data Types](#52-converting-object-data-types)
@@ -143,6 +144,26 @@ exfile_sex = exfile_sex.pivot_table(index='id', values='sex').reset_index()
 # Merge variables that do not change over j.
 exfile3 = pd.merge(exfile_sex, exfile2, on='id')
 exfile3
+```
+
+## 4.6. Loops
+
+```Stata
+
+
+```
+
+```Python
+import pandas as pd
+from scipy.stats import zscore
+
+df = pd.DataFrame({'Observer':['Adam','Ken','Zita','Ari','Sam'],
+                  'Day1':[3,6,7,8,4],
+                  'Day2':[7,4,6,5,6],
+                  'Day3':[8,6,4,3,2]})
+                  
+for var in ['Day1','Day2','Day3']:
+    df['z{}'.format(var)] = df[[var]].apply(zscore)
 ```
 
 # 5. Exporting Pandas data to Stata
