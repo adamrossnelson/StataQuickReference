@@ -148,11 +148,53 @@ exfile3
 
 ## 4.6. Loops
 
+### Foreach Loops
+**Stata Version**
 ```Stata
+use http://www.stata-press.com/data/r15/auto2.dta
 
+foreach var in price mpg weight length {
+    sum `var'
+    gen z`var' = (`var' - r(mean)) / r(sd)
+}
 
+list price mpg weight length zprice zmpg zweight zlength in 1/5
+```
+**Python Version**
+```Python
+import pandas as pd
+from scipy.stats import zscore
+
+exfile = pd.read_stata('http://www.stata-press.com/data/r15/auto2.dta')
+
+for var in ['price','mpg','weight','length']:
+    exfile['z{}'.format(var)] = exfile[[var]].apply(zscore)
+
+exfile.head()
 ```
 
+### Forvalues Loops
+
+**Stata Version**
+
+```Stata
+clear all
+
+input str10 Observer Day1 Day2 Day3
+   "Adam" 3 7 8
+   "Ken"  6 4 6
+   "Zita" 7 6 4
+   "Sam"  4 6 2
+end
+
+forvalues i = 1/3 {
+   sum Day`i'
+   gen zDay`i' = (Day`i' - r(mean)) / r(sd)
+}
+
+list
+```
+**Python Version**
 ```Python
 import pandas as pd
 from scipy.stats import zscore
@@ -161,10 +203,14 @@ df = pd.DataFrame({'Observer':['Adam','Ken','Zita','Ari','Sam'],
                   'Day1':[3,6,7,8,4],
                   'Day2':[7,4,6,5,6],
                   'Day3':[8,6,4,3,2]})
-                  
-for var in ['Day1','Day2','Day3']:
-    df['z{}'.format(var)] = df[[var]].apply(zscore)
+
+for i in range(1,4):
+    df['zDay{}'.format(i)] = df[['Day{}'.format(i)]].apply(zscore)
+
+df
 ```
+
+
 
 # 5. Exporting Pandas data to Stata
 
