@@ -79,8 +79,8 @@ Delete variable(s) | `drop newtxt newnum` | `exfile = exfile.drop(columns=['newt
 Keep variable(s) | `keep make price mpg` | `exfile = exfile[['make','price','mpg']]`
 Delete specific observation | `drop if _n = 10` | `exfile = exfile.drop(9)`
 Delete observation(s) by logic | `drop if mpg > 30` <br> or <br> `keep if mpg < 31` | `exfile = exfile[exfile['mpg'] < 31]` <br> or <br> `exfile = exfile[exfile['mpg'] > 30]`
-Sorting by a variable ascending | `sort price` | `exfile = exfile.sort_values(by['price'])`
-Sorting by a variable descending | `gsort -price` | `exfile = exfile.sort_values(by['price'], ascending=False)`
+Sorting by a variable ascending | `sort price` | `exfile = exfile.sort_values(by=['price'])`
+Sorting by a variable descending | `gsort -price` | `exfile = exfile.sort_values(by=['price'], ascending=False)`
 Display summary statistics (specific variables) | `sum price mpg weight` | `exfile[['price','mpg','weight']].describe()` <br> or <br> `exfile[['price','mpg','weight']].describe().T`
 Enstring numbers | `tostring price, gen(pricestr)` | `exfile['price_str'] = exfile['price'].astype(str)`
 Destring strings | `destring pricestr, gen(pricenum)` | `exfile['price_num'] = exfile['price_str'].astype(int)`
