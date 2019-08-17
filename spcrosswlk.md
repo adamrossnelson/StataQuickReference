@@ -16,6 +16,7 @@
     - [5.1. Problems With Unicode](#51-problems-with-unicode)
     - [5.2. Converting Object Data Types](#52-converting-object-data-types)
     - [5.3. Handling Column Names](#53-handling-column-names)
+    - [5.4 Writing Variable Labels](#54-writing-variable-labels)
 - [6. Also useful](#6-also-useful)
     - [6.1. Summary Statistics](#61-summary-statistics)
     - [6.2. Advanced Summary Stats With Pandas Profiling](#62-advanced-summary-stats-with-pandas-profiling)
@@ -298,6 +299,11 @@ df.columns = clean_cols(df.columns, case='upper')
 
 df.columns = clean_cols(df.columns, case='asis')
 ```
+
+## 5.4 Writing Variable Labels
+
+See here for a [demonstration of writing Variable Labels](https://github.com/adamrossnelson/StataQuickReference/blob/master/dtaconversion/WriteDTAValueLabels.ipynb).
+
 
 # 6. Also useful
 
