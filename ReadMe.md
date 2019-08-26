@@ -63,7 +63,7 @@ Demonstrates production of a stacked area chart in Stata. Also demonstrates drop
 
 ```Stata
 // To run from command line:
-do https://raw.githubusercontent.com/adamrossnelsonStataQuickReference/master/plotting/StackArea.do
+do https://raw.githubusercontent.com/adamrossnelson/StataQuickReference/master/plotting/StackArea/StackArea.do
 ```
 
 ### 2.2.3. marginstrend.do
