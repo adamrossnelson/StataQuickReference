@@ -88,6 +88,22 @@ Destring strings | `destring pricestr, gen(pricenum)` | `exfile['price_num'] = e
 
 * *Splits behave differently in Stata & Pandas. More development needed here.*
 
+A function that Stata does quickly and simplistically `count`, is not well implemented in Pandas.
+
+```Stata
+set more off
+clear all
+use http://www.stata-press.com/data/r15/auto2.dta
+count if foreign == 1
+```
+
+```
+# Counting a categorical. Map the category you want to count into a series.
+# Then use `series.count()` to get non NaN instatnces.
+exfile = pd.read_stata('http://www.stata-press.com/data/r15/auto2.dta')
+exfile['foreign'].map({1:1}).count()
+```
+
 ## 4.2. Categorical Factor Variables
 
 Description | Stata Code | Pandas Code
