@@ -132,6 +132,14 @@ Download and install using `net install tidy, from(https://github.com/matthieugo
 
 Stata scheme notes eventually to be placed in seperate `md` file.
 
+## Scheme Talk 
+From: 12th UK Stata Users Group meeting: Abstracts 
+
+[Scheming your way to consistent graphs](https://www.stata.com/meeting/12uk/abstracts.html#wiggins)
+Talk delivered by: Vincent L. Wiggins of StataCorp, College Station, TX
+
+For the zip of his presentation see also this repo's [plotting subfolder](https://github.com/adamrossnelson/StataQuickReference/tree/master/plotting). Or to read more [see my tweet](https://twitter.com/AdamRossNelson/status/1071034935149031425).
+
 ## burd
 
 More information from: https://econpapers.repec.org/software/bocbocode/s457623.htm & https://github.com/briatte/burd which explains:
