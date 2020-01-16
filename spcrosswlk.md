@@ -111,9 +111,42 @@ Description | Stata Code | Pandas Code
 Load example data | `use http://www.stata-press.com/data/r15/hbp2.dta` | `exfile = pd.read_stata('http://www.stata-press.com/data/r15/hbp2.dta')`
 One-way tabulation | `tab year` <br> or <br> `tab race` | `exfile['year'].value_counts()` <br> or <br> `exfile['race'].value_counts()`
 Two-way tabulation | `tab year race` | `pd.crosstab(exfile['year'], exfile['race'])`
+Two-way tagulation with `row` option that normalizes by row | `tab year race, row` | `pd.crosstab(exfile['year'], exfile['race']).apply(lambda r: r/r.sum(), axis=1)`
+Two-way tabulation with `col` option that normalizes by column | `tab year race, col` | `pd.crosstab(exfile['year'], exfile['race']).apply(lambda r: r/r.sum(), axis=0)`
 Three-way tabulation | `table year race sex` | `pd.crosstab(exfile['year'], [exfile['sex'], exfile['race']])`
 Encode a categorical (That was originally string) | `encode sex, gen(sex_cat)` | `exfile['sex_cat'] = exfile['sex'].astype('category')` <br> then <br> `exfile['sex_cat_code'] = exfile['sex_cat'].cat.codes`
 Create an array of dummies from categorical | `tab sex, gen(sex_)` | `exfile = pd.get_dummies(exfile, columns=['sex'])`
+
+Practice tip for those transitioning from Stata to Python. Where Stata lets you reference rows and columns with the very human readable optional arguments `row` and `col`, Python wants an axis number. To make Python code more human readable, possibly easier to read it is an option to declare a row and a col variable. An example that builds on the two-way tabulation examples above.
+
+```Python
+>>> import pandas as pd
+>>> exfile = pd.read_stata('http://www.stata-press.com/data/r15/hbp2.dta')
+>>> row = 1; col = 0
+>>> 
+>>> # Now user row and col variables instead of axis index.
+>>> pd.crosstab(exfile['year'], exfile['race']).apply(lambda r: r/r.sum(), axis=row)
+
+race     White     Black  Hispanic
+year                              
+1988  0.104167  0.812500  0.083333
+1989  0.077670  0.796117  0.126214
+1990  0.195652  0.686957  0.117391
+1991  0.207547  0.664151  0.128302
+1992  0.200873  0.620087  0.179039
+1993  0.147410  0.701195  0.151394
+
+>>> pd.crosstab(exfile['year'], exfile['race']).apply(lambda r: r/r.sum(), axis=col)
+
+race     White     Black  Hispanic
+year                              
+1988  0.025510  0.050453  0.025478
+1989  0.040816  0.106080  0.082803
+1990  0.229592  0.204398  0.171975
+1991  0.280612  0.227684  0.216561
+1992  0.234694  0.183700  0.261146
+1993  0.188776  0.227684  0.242038
+```
 
 ## 4.3. Merge Datasets
 
