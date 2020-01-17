@@ -153,7 +153,44 @@ year
 Description | Stata Code | Pandas Code
 ------------|------------|------------
 Load example data | `use http://www.stata-press.com/data/r15/autoexpense.dta`<br> and <br> `use http://www.stata-press.com/data/r15/autosize.dta` | `autoexp = pd.read_stata('http://www.stata-press.com/data/r15/autoexpense.dta')` <br> and <br> `autosiz = pd.read_stata('http://www.stata-press.com/data/r15/autosize.dta')`
-Merge autoexpense autosize (using make as the key variable) | After loading `autosize.dta` <br> `merge 1:1 make using http://www.stata-press.com/data/r15/autoexpense.dta` | `pd.merge(autoexp,autosiz, on='make',how='outer')`
+Merge autoexpense autosize (using make as the key variable) | After loading `autosize.dta` <br> `merge 1:1 make using http://www.stata-press.com/data/r15/autoexpense.dta` | `pd.merge(autoexp,autosiz, on='make', how='outer')`
+
+**Mismatched Defaults.** By default Stata performs what Pandas would refer to as an `outer` merge. Meaning "use union of keys from both frames, similar to a SQL full outer join; sort keys lexicographically." (cite)[https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.merge.html]. More simply, the result will include all records from both datasets.
+
+The default in Pandas performs an `inner` merge which means "use intersection of keys from both frames, similar to a SQL inner join; preserve the order of the left keys." (cite)[https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.merge.html]. Again more simply, the result will only include records that matched in both datasets.
+
+For Stata users looking to replicate Stata's behavior on a merge operation it is necessary to specify the `how='outer'` argument in the `pd.merge()` statement.
+
+**The missing ouput.** By default Stata performs the merge operation while also adding a variable called `_merge` which indicates for each observation it that observation was from the master dataset (equivalent to the left side), the using dataset (equivalent to the right side), or both datasets. Additionally, Stata provides output which can help verify the merge operation was successful. To replicate Stata's behavior in Pandas users can add the `indicator=True` argument to the `pd.merge()` statement. This indicator arguemtn then adds a variable that Pandas also calls `_merge` which can then be tabulated or cross-tabulated with other variables to assess merge results. A full example, using the above:
+
+```Pthon
+autoexp = pd.read_stata('http://www.stata-press.com/data/r15/autoexpense.dta')
+autosiz = pd.read_stata('http://www.stata-press.com/data/r15/autosize.dta')
+df = pd.merge(autoexp,autosiz, on='make', how='outer', indicator=True)
+df['_merge'].value_counts()
+
+both          5
+right_only    1
+left_only     0
+Name: _merge, dtype: int64
+```
+Another example using mock data:
+
+```Python
+import random
+data1 = {'var1':[1,2,3,4,5],
+         'dat1':[random.randrange(10,99,1) for i in range(5)]}
+data2 = {'var1':[2,3,4,5,6],
+         'dat2':[random.randrange(10,99,1) for i in range(5)]}
+df = pd.merge(pd.DataFrame(data1), pd.DataFrame(data2), on='var1', 
+              how='outer', indicator=True)
+df['_merge'].value_counts()
+
+both          4
+right_only    1
+left_only     1
+Name: _merge, dtype: int64
+```
 
 ## 4.4. Append Datasets
 
