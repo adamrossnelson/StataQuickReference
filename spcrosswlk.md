@@ -298,7 +298,7 @@ for i in range(1,4):
 df
 ```
 
-## 4.7. Loops
+## 4.7. Specialty Loops
 
 **Stata Version - Loop Through Files In Directory**
 
