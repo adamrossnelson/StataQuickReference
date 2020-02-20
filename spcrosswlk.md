@@ -12,6 +12,7 @@
     - [4.4. Append Datasets](#44-append-datasets)
     - [4.5. Reshape Datasets](#45-reshape-datasets)
     - [4.6. Loops](#46-loops)
+    - [4.7. Specialty Loops](#47-specialty-loops)
 - [5. Exporting Pandas data to Stata](#5-exporting-pandas-data-to-stata)
     - [5.1. Problems With Unicode](#51-problems-with-unicode)
     - [5.2. Converting Object Data Types](#52-converting-object-data-types)
@@ -297,7 +298,31 @@ for i in range(1,4):
 df
 ```
 
+## 4.7. Loops
 
+**Stata Version - Loop Through Files In Directory**
+
+```Stata
+// Get list of files that are csv
+local files : dir . files "*.csv"
+
+// Loop through file list and save each one in Stata .dta
+foreach file in `files' {
+    import delimited using "`file'"
+    save "`file'.dta", replace
+    clear
+}
+```
+
+```Python
+import os
+import pandas as pd
+
+# Loop through files that are csv and save each in Stata .dta
+for filename in os.listdir():
+    if filename[-4:] == '.csv':
+        pd.read_csv(filename).to_stata('{}.dta'.format(filename[:-4]))
+```
 
 # 5. Exporting Pandas data to Stata
 
