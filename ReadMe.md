@@ -14,6 +14,7 @@ Fellow Stata enthusiest [Kyle Barron](https://kylebarron.github.io/) has develop
         - [2.2.4. geoplotipeds.do](#224-geoplotipedsdo)
         - [2.2.5. Facradar.do](#225-facradardo)
         - [2.2.6. GetStataSchemes.do](#226-getstataschemesdo)
+        - [2.2.7. Lesser Known But Helpful](#227-lesserknownbuthelpful)
     - [2.3. ProgArgs.do](#23-progargsdo)
     - [2.4. renvarlabs.do](#24-renvarlabsdo)
     - [2.5. md_demo.do](#25-md_demodo)
@@ -109,6 +110,18 @@ graph query, schemes
 // Change default scheme:
 set scheme [scheme name], perm
 ```
+
+### 2.2.7. Lesser Known But Helpful
+
+`numlabel, add` With the `, add` option and no other arguments this command will operate on all categorical variables. Helpful when displaying and inspecting data.
+
+`about` Displays information about your version of Stata.
+
+`sysdir` Query system directories
+
+`macro list` Displays information about your version and/or installation instance of Stata.
+
+`creturn list` Displays information about your version, your computer, your installation, and a variety of system variables.
 
 ## 2.3. ProgArgs.do
 
