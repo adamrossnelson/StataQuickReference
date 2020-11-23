@@ -1,6 +1,6 @@
 # 1. Table of Coneents
 
-Fellow Stata enthusiest [Kyle Barron](https://kylebarron.github.io/) has developed and made available `stata_kernel` which makes Stata available in Jupyter Notebooks. Check [here](https://kylebarron.github.io/stata_kernel/getting_started/) for more information on set up and installation. Otherwise [here](https://github.com/adamrossnelson/StataQuickReference/blob/master/StataNotebookExample.ipynb) is a working example.
+Fellow Stata enthusiast [Kyle Barron](https://kylebarron.github.io/) has developed and made available `stata_kernel` which makes Stata available in Jupyter Notebooks. Check [here](https://kylebarron.github.io/stata_kernel/getting_started/) for more information on setup and installation. Otherwise [here](https://github.com/adamrossnelson/StataQuickReference/blob/master/StataNotebookExample.ipynb) is a working example.
 
 <!-- TOC -->
 
@@ -29,7 +29,7 @@ Fellow Stata enthusiest [Kyle Barron](https://kylebarron.github.io/) has develop
 
 These examples are designed to run from the web. Where possible and where time has permitted these examples are both Mac and Windows compatible. But, no promises.
 
-For a currated list of packages, their descriptions, and links to further documentation see: [list of useful packages](https://github.com/adamrossnelson/StataQuickReference/blob/master/usefulpackages.md)
+For a curated list of packages, their descriptions, and links to further documentation see: [list of useful packages](https://github.com/adamrossnelson/StataQuickReference/blob/master/usefulpackages.md)
 
 The folks over [geocenter.github.io](https://geocenter.github.io/StataTraining/portfolio/01_resource/) have produced and provided a series of Stata quick references. I keep copies printed out on cardstock at all of my workstations. They're great as gifts! [Local copies here](https://raw.githubusercontent.com/adamrossnelson/StataQuickReference/master/chtshts/AllCheatSheets.pdf). Also worth reviewing are similar [quick references for R and RStudio](https://www.rstudio.com/resources/cheatsheets/).
 
@@ -60,7 +60,7 @@ Want to make your own schemes? Vince Wiggins of StataCorp provided a walk-throug
 
 ### 2.2.2. Stacked area chart StackArea.do
 
-Demonstrates production of a stacked area chart in Stata. Also demonstrates dropping a standard legend in favor of explanatory text over stacked areas/regious.
+Demonstrates production of a stacked area chart in Stata. Also shows dropping a standard legend in favor of explanatory text over stacked areas/regions.
 
 ```Stata
 // To run from command line:
@@ -69,7 +69,7 @@ do https://raw.githubusercontent.com/adamrossnelson/StataQuickReference/master/p
 
 ### 2.2.3. marginstrend.do
 
-This do file demonstrates using margins and marginsplot to visualize trends using Stata. Data is fictional.
+This do file shows using `margins` and `marginsplot` to visualize trends using Stata. Data is fictional.
 ```Stata
 // To run from command line:
 do https://raw.githubusercontent.com/adamrossnelson/StataQuickReference/master/plotting/marginstrend.do
@@ -77,7 +77,7 @@ do https://raw.githubusercontent.com/adamrossnelson/StataQuickReference/master/p
 
 ### 2.2.4. geoplotipeds.do
 
-Using the longitude and latitude variables stored in IPEDS data this routine builds a visualization of the institutions located in North America.
+Using the longitude and latitude variables stored in IPEDS data, this routine builds a visualization of the institutions in North America.
 
 ```Stata
 // To run from command line:
@@ -86,15 +86,15 @@ do https://raw.githubusercontent.com/adamrossnelson/StataQuickReference/master/p
 
 ### 2.2.5. Facradar.do
 
-Another plotting demonstration. Demonstrates genderating a radar plot. Requires the `radar` package which is available at `http://fmwww.bc.edu/repec/bocode/r/radar.html`. The example given in `radar` documentation shows the package excels at plotting a categorical y (such as automobile make) and a continuous x (automobile weight).
+Another plotting demonstration. Demonstrates generating a radar plot. Requires the `radar` package available at `http://fmwww.bc.edu/repec/bocode/r/radar.html`. The example given in `radar` documentation shows the package excels at plotting a categorical y (such as automobile make) and a continuous x (automobile weight).
 
-This implementatino plots a categorical y (such as a series of factor scores) and a continuous x (which would be each factor score's mean).
+This implementation plots a categorical y (such as a series of factor scores) and a continuous x (which would be each factor score's mean).
 
-**Help wanted note:** Seeking collaborator in convering `facradar.do` into Stata `.ado` package.
+**Help wanted note:** Seeking collaborator in converting `facradar.do` into Stata `.ado` package.
 
 ### 2.2.6. GetStataSchemes.do
 
-This file is a quick routine that will install a range of graphic schemes. Stata's raphic schemes are a useful way to improve the visual presentation of data.
+This file is a quick routine that will install a range of graphic schemes. Stata's graphic schemes are a useful way to improve the visual presentation of data.
 
 This routine also sets the default scheme to `lean2wide` which is a modified version of lean1 and lean2. More information about development history in the do file.
 
@@ -125,7 +125,7 @@ set scheme [scheme name], perm
 
 ## 2.3. ProgArgs.do
 
-Demonstration of defining a program, passing arguments, referencing and displaying the arguments passed. Demonstrates material presented Stata 15 User Manua sections 18.1 & 18.4.
+Demonstration of defining a program, passing arguments, referencing and displaying the arguments passed. Demonstrates material presented Stata 15 User Manual sections 18.1 & 18.4.
 
 To execute from command line:
 
@@ -135,7 +135,7 @@ do https://raw.githubusercontent.com/adamrossnelson/StataQuickReference/master/P
 
 ## 2.4. renvarlabs.do
 
-This do file provides a method to quickly add text to all variable labels. Also provides an example code that can reference existing variable labels which is useful when automating output for graphs or putdoc/pdf, etc.
+This do file provides a method that adds text to all variable labels. Also provides an example code that can reference existing variable labels which is useful when automating output for graphs or putdoc/pdf, etc.
 
 ```Stata
 // To run from command line:
@@ -144,9 +144,9 @@ do https://raw.githubusercontent.com/adamrossnelson/StataQuickReference/master/r
 
 ## 2.5. md_demo.do
 
-Generates markdown from Stata using `qui` abd `noi di...` Demonstrates and tests a method for Stata to automate output for display on GitHub.
+Generates markdown from Stata using `qui` and `noi di...` Demonstrates and tests a method for Stata to automate output for display on GitHub or Markdown.
 
-Cannot be run from command line without downloading a local copy.
+Cannot run from the command line without downloading a local copy.
 
 ## 2.6. asciiadam.do
 
@@ -164,11 +164,11 @@ This repo also provides a [Stata to Pandas Cross-Walk](https://github.com/adamro
 
 # 4. Importing JSON to Stata
 
-This  task is not as straight forward as it should or could be. At least two excellent packages exist including [insheetjson](https://ideas.repec.org/c/boc/bocode/s457407.html) and [jsonio](https://wbuchanan.github.io/StataJSON/). Good advice has been written in the [discussion boards](https://www.statalist.org/forums/forum/general-stata-discussion/general/1357829-creating-a-stata-data-file-from-a-json-formatted-file) (just one example) too.
+This  task is not as straight forward as it should or could be. At least two excellent packages exist including [insheetjson](https://ideas.repec.org/c/boc/bocode/s457407.html) and [jsonio](https://wbuchanan.github.io/StataJSON/). The [discussion boards](https://www.statalist.org/forums/forum/general-stata-discussion/general/1357829-creating-a-stata-data-file-from-a-json-formatted-file) provide friendly advice, too.
 
-For myself, I often find it less difficult and more reliable to use Python's Pandas library. Until recent, for some use cases, this roundabout (json > pandas > stata) approach was necessary. In version 0.23.0, Pandas released support for Stata's `strL` data type. Before `strL` support, if any text fields in the JSON data contained more than 2045 characters it is was possible to go directly from `JSON` to Stata `dta`. This issue was documented (https://github.com/pandas-dev/pandas/issues/16450), resolved, and now available in the latest release. The [revised documentation](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.to_stata.html) also provides helpful information.
+For myself, I often find it less difficult and more reliable to use Python's Pandas library. Until recently, for some use cases, this roundabout (json > pandas > stata) approach was necessary. In version 0.23.0, Pandas released support for Stata's `strL` data type. Before `strL` support, if any text fields in the JSON data contained over 2045 characters, it was difficult to go directly from `JSON` to Stata `dta`. The issue documenation (https://github.com/pandas-dev/pandas/issues/16450), resolved, and now available in the latest release. The [revised documentation](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.to_stata.html) also provides helpful information.
 
-Now that Pandas supports Stata's `strL` data type the first of the two code samples below should be sufficient. Also, if all text fields are 2045 characters or less the second code block below works well to produce a Stata `dta` file:
+Now that Pandas supports Stata's `strL` data type, the first of the two code samples below should be sufficient. Also, if all text fields are 2045 characters or less the second code block below works well to produce a Stata `dta` file:
 
 ```Python
 import pandas as pd
@@ -176,7 +176,7 @@ pd.read_json('DemoFileRaw.json').to_stata('DemoFileRaw.dta', write_index=False,
               version=117, convert_strl=['list', 'of', 'fields')
 ```
 
-A workaround that will also be sufficient for many is to first convert to MS Excel `xlsx` which can then be imported at Stata's command line:
+A workaround that will also be sufficient for many is to first convert to MS Excel `xlsx` which Stata can then imported the command line:
 
 ```Python
 import pandas as pd
