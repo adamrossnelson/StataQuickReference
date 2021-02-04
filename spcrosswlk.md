@@ -235,21 +235,39 @@ exfile3 = pd.merge(exfile_sex, exfile2, on='id')
 exfile3
 ```
 
-Another example from Dean McGrath who writes [Pivoting A Pandas DataFrame](https://towardsdatascience.com/pivoting-a-pandas-dataframe-c8ddfae35d2) at _Towards Data Science_.
+Another example from Dean McGrath who writes [Pivoting A Pandas DataFrame](https://towardsdatascience.com/pivoting-a-pandas-dataframe-c8ddfae35d2) at _Towards Data Science_. Version with adjustments:
 
 ```Python
 import pandas as pd
 
-# Example Data
+# Example Long Data
 df = pd.DataFrame(data={'staff_no': [9999] * 5,
                         'name': ['Dean'] * 5,
                         'year': [2016, 2017, 2018, 2019, 2020],
                         'hours': [349, 231, 876, 679, 976]})
 
-df = df.pivot(index=['staff_no', 'name'],
-              columns=['year'], values='hours').reset_index()
+# Convert Long To Wide
+df = df.pivot(index='name', columns='year', values='hours').reset_index()
 ```
 
+A wide to long example based on an article from Soner Yildirim who writes [8 Ways to Transform Pandas Dataframes](https://towardsdatascience.com/8-ways-to-transform-pandas-dataframes-b8c168ce878f#4610) at _Towards Data Science_.
+
+```Python
+import pandas as pd
+
+# Example Long Data
+df = pd.DataFrame(data={'staff_no': [9999] * 5,
+                        'name': ['Dean'] * 5,
+                        'year': [2016, 2017, 2018, 2019, 2020],
+                        'hours': [349, 231, 876, 679, 976]})
+
+# Convert Long To Wide
+df = df.pivot(index='name', columns='year', values='hours').reset_index()
+
+# Convert Wide To Long
+pd.melt(df, id_vars='name').head()
+
+```
 
 ## 4.6. Loops
 
