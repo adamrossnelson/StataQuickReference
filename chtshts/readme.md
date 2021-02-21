@@ -2,6 +2,8 @@
 
 This subfolder, and the ReadMe.md collects links to useful "cheat" sheets, cookbooks, and similar resources.
 
+Plus also a few YT videos.
+
 ## Stata Python Rosetta Stone
 - Crosswalk between State & Python [Online](https://github.com/adamrossnelson/StataQuickReference/blob/master/chtshts/StataPythonRosettaStoneCheat.pdf) | 
 [Download](https://github.com/adamrossnelson/StataQuickReference/raw/master/chtshts/StataPythonRosettaStoneCheat.pdf)
@@ -23,10 +25,10 @@ This subfolder, and the ReadMe.md collects links to useful "cheat" sheets, cookb
 
 ## Some YouTueb Videos
 
-[![Image of IPEDS Video](http://img.youtube.com/vi/dCagXsBf9Vs/0.jpg)](https://www.youtube.com/watch?v=dCagXsBf9Vs)
-[![Image of IPEDS Video](http://img.youtube.com/vi/dCagXsBf9Vs/0.jpg)](https://www.youtube.com/watch?v=dCagXsBf9Vs)
-
 [![Image of IPEDS Video](http://img.youtube.com/vi/6bi6xyzUq6Y/0.jpg)](https://www.youtube.com/watch?v=6bi6xyzUq6Y)
 
+[![Image of IPEDS Video](http://img.youtube.com/vi/LQ18ffAeWU0/0.jpg)](https://www.youtube.com/watch?v=LQ18ffAeWU0)
 
+[![Image of IPEDS Video](http://img.youtube.com/vi/wu_D3JjuKiQ/0.jpg)](https://www.youtube.com/watch?v=wu_D3JjuKiQ)
 
+[![Image of IPEDS Video](http://img.youtube.com/vi/-vqxqn9S044/0.jpg)](https://www.youtube.com/watch?v=-vqxqn9S044)
