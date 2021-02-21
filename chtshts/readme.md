@@ -11,7 +11,7 @@ This subfolder, and the ReadMe.md collects links to useful "cheat" sheets, cookb
 [Online](https://github.com/adamrossnelson/StataQuickReference/blob/master/chtshts/242PagesSeaborn.pdf) | 
 [Download](https://github.com/adamrossnelson/StataQuickReference/raw/master/chtshts/242PagesSeaborn.pdf)
 
-- The Stata Guide On Medium [Original Post](https://twitter.com/TStatSrl/status/1362798659251879939) | Online(https://medium.com/the-stata-guide)
+- The Stata Guide On Medium [Original Post](https://twitter.com/TStatSrl/status/1362798659251879939) | [Online](https://medium.com/the-stata-guide)
 
 ## Stata, General
 - Data processing, analysis, etc in Stata 14. [Online](https://github.com/adamrossnelson/StataQuickReference/blob/master/chtshts/AllCheatSheets.pdf) | 
