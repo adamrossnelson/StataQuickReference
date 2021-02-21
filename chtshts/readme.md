@@ -21,3 +21,11 @@ This subfolder, and the ReadMe.md collects links to useful "cheat" sheets, cookb
 - Python Pandas for Data Science [Online](https://github.com/adamrossnelson/StataQuickReference/blob/master/chtshts/PandasPythonForDataScience.pdf) | 
 [Download](https://github.com/adamrossnelson/StataQuickReference/raw/master/chtshts/PandasPythonForDataScience.pdf)
 
+## Some YouTueb Videos
+
+[![Image of IPEDS Video](http://img.youtube.com/vi/dCagXsBf9Vs/0.jpg)](https://www.youtube.com/watch?v=dCagXsBf9Vs)
+
+[![Image of IPEDS Video](http://img.youtube.com/vi/6bi6xyzUq6Y&t=3s/0.jpg)](https://www.youtube.com/watch?v=6bi6xyzUq6Y&t=3s)
+
+
+
