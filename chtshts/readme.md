@@ -24,8 +24,9 @@ This subfolder, and the ReadMe.md collects links to useful "cheat" sheets, cookb
 ## Some YouTueb Videos
 
 [![Image of IPEDS Video](http://img.youtube.com/vi/dCagXsBf9Vs/0.jpg)](https://www.youtube.com/watch?v=dCagXsBf9Vs)
+[![Image of IPEDS Video](http://img.youtube.com/vi/dCagXsBf9Vs/0.jpg)](https://www.youtube.com/watch?v=dCagXsBf9Vs)
 
-[![Image of IPEDS Video](http://img.youtube.com/vi/6bi6xyzUq6Y&t=3s/0.jpg)](https://www.youtube.com/watch?v=6bi6xyzUq6Y&t=3s)
+[![Image of IPEDS Video](http://img.youtube.com/vi/6bi6xyzUq6Y/0.jpg)](https://www.youtube.com/watch?v=6bi6xyzUq6Y)
 
 
 
