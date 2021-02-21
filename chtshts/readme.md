@@ -22,6 +22,8 @@ Plus also a few YT videos.
 ## Python, General
 - Python Pandas for Data Science [Online](https://github.com/adamrossnelson/StataQuickReference/blob/master/chtshts/PandasPythonForDataScience.pdf) | 
 [Download](https://github.com/adamrossnelson/StataQuickReference/raw/master/chtshts/PandasPythonForDataScience.pdf)
+- Python Numby for Data Science [Online](https://github.com/adamrossnelson/StataQuickReference/blob/master/chtshts/PythonNumpyDataScience.pdf) |
+[Download](https://github.com/adamrossnelson/StataQuickReference/raw/master/chtshts/PythonNumpyDataScience.pdf)
 
 ## Some YouTueb Videos
 
