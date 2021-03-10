@@ -11,7 +11,7 @@ Plus also a few YT videos.
 ## Regression Interpretations
 Log-Log / Lin-Log / Log-Lin / Quadratic, etc.
 
-- Regression Interpretation [Online](https://github.com/adamrossnelson/StataQuickReference/blob/master/chtshts/Regression%20Interp%20Cheat%20Sheet%201.0.pdf)
+- Regression Interpretation [Online](https://github.com/adamrossnelson/StataQuickReference/blob/master/chtshts/Regression%20Interp%20Cheat%20Sheet%201.0.pdf) | 
 [Download](https://github.com/adamrossnelson/StataQuickReference/raw/master/chtshts/Regression%20Interp%20Cheat%20Sheet%201.0.pdf))
 
 ## Data Visualizations
