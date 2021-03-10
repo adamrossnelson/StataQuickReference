@@ -8,6 +8,12 @@ Plus also a few YT videos.
 - Crosswalk between State & Python [Online](https://github.com/adamrossnelson/StataQuickReference/blob/master/chtshts/StataPythonRosettaStoneCheat.pdf) | 
 [Download](https://github.com/adamrossnelson/StataQuickReference/raw/master/chtshts/StataPythonRosettaStoneCheat.pdf)
 
+## Regression Interpretations
+Log-Log / Lin-Log / Log-Lin / Quadratic, etc.
+
+- Regression Interpretation [Online](https://github.com/adamrossnelson/StataQuickReference/blob/master/chtshts/Regression%20Interp%20Cheat%20Sheet%201.0.pdf)
+[Download](https://github.com/adamrossnelson/StataQuickReference/raw/master/chtshts/Regression%20Interp%20Cheat%20Sheet%201.0.pdf))
+
 ## Data Visualizations
 - 242 Pages of Data Visualization with Seaborn by Asif Bhat [Original Post](https://www.linkedin.com/feed/update/urn:li:activity:6767501269658664961?updateEntityUrn=urn%3Ali%3Afs_feedUpdate%3A%28V2%2Curn%3Ali%3Aactivity%3A6767501269658664961%29) | 
 [Online](https://github.com/adamrossnelson/StataQuickReference/blob/master/chtshts/242PagesSeaborn.pdf) | 
