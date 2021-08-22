@@ -4,10 +4,10 @@ This folder contains fictional data for demonstration or testing uses.
 
 There are four series of fictional and demonstration data here.
 
-1 DatasaRus, Modified
-2 Example IPEDS data
-3 General Purpose IPEDS data
-4 Mock Fictional GPA Data
+ 1. DatasaRus, Modified
+ 2. Example IPEDS data
+ 3. General Purpose IPEDS data
+ 4. Mock Fictional GPA Data
 
 More information on each of the four data sets below.
 
