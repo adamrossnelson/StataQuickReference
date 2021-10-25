@@ -51,11 +51,11 @@ scatter hrs2 score, name("Check0")
 // Generate groups based on rotated vraibles
 gen group = "Unk"
 sort hours
-replace group = "5yr" if hrs2 > 45
-replace group = "4yr" if hrs2 < 45 & hrs2 > 10
+replace group = "1yr" if hrs2 > 45
+replace group = "2yr" if hrs2 < 45 & hrs2 > 10
 replace group = "3yr" if hrs2 < 10 & hrs2 > -10
-replace group = "2yr" if hrs2 < -10 & hrs2 > -45
-replace group = "1yr" if hrs < -45
+replace group = "4yr" if hrs2 < -10 & hrs2 > -45
+replace group = "5yr" if hrs < -45
 
 // Check work
 twoway ///
