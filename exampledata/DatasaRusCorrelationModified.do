@@ -89,6 +89,13 @@ pwcorr hypo*, sig star(5) obs
 // Keep vars of interest for educational demonstrations
 keep hypo* hours score gcat
 
+// Add variable labels
+label variable hours "Hours spent studying for an exam."
+label variable score "The score earned on an exam."
+label variable gcat "Grade in school."
+label variable hypo_y "Hypothetical y variable."
+label variable hypo_x "Hypothetical x variable."
+
 // Save data
 save "Lab 9.1 Correlation Analysis Limitations Supp.dta"
 save "DatasaRusCorrelationModified.dta"
