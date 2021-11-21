@@ -72,7 +72,7 @@ twoway (scatter mpg weight if foreign == 1 & pbubble == 1, msize(small) msymbol(
 	   text(35 3750 "Domestic") ///
 	   text(32.5 3750 "Foreign") ///
 	   title("Bubble charts in Stata!") ///
-	   note("@adamrossnelson")
+	   note("@adamrossnelson") ///
 	   legend(off) name(fourd)
 
 	   
