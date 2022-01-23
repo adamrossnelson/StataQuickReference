@@ -113,15 +113,17 @@ set scheme [scheme name], perm
 
 ### 2.2.7. Lesser Known But Helpful
 
-`numlabel, add` With the `, add` option and no other arguments this command will operate on all categorical variables. Helpful when displaying and inspecting data.
+`numlabel, add` Prefix numeric values to value labels. With the `, add` option and no other arguments this command will operate on all categorical variables. Helpful when displaying and inspecting data.
 
-`about` Displays information about your version of Stata.
+`about` Displays information about your version of Stata. If you are running Stata for Windows, information about memory is also displayed.
 
-`sysdir` Query system directories
+`sysdir` Query/list system directories. 
 
-`macro list` Displays information about your version and/or installation instance of Stata.
+`macro list` Displays a list of the current set of macros (both local and global) in memory. Also displays information about your version and/or installation instance of Stata.
 
-`creturn list` Displays information about your version, your computer, your installation, and a variety of system variables.
+`creturn list` Displays information about your version, your computer, your installation, and a variety of system variables. From the manual " Stata's c-class, c(), contains the values of system parameters and settings, along with certain constants such as the value of pi. c() values may be referred to but may not be assigned."
+
+`set` Displays system settings. This collection of commands permits edits to system settings.
 
 ## 2.3. ProgArgs.do
 
