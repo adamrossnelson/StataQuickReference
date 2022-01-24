@@ -123,7 +123,9 @@ set scheme [scheme name], perm
 
 `creturn list` Displays information about your version, your computer, your installation, and a variety of system variables. From the manual " Stata's c-class, c(), contains the values of system parameters and settings, along with certain constants such as the value of pi. c() values may be referred to but may not be assigned."
 
-`set` Displays system settings. This collection of commands permits edits to system settings.
+`set` Displays system settings. This collection of commands permits edits to system settings. A common example: `set more off` - which tells Stata to pause or not pause for the `--more--` messages. Thus, another common example soon after each installation is `set more off, perm`.
+
+`mvencode` and `mvdecode` Commands that quickly recategorize/recode missing values. `mvencode` Changes missing values to numeric values. `mvdecode` Changes numeric values to missing values.
 
 ## 2.3. ProgArgs.do
 
@@ -152,7 +154,7 @@ Cannot run from the command line without downloading a local copy.
 
 ## 2.6. asciiadam.do
 
-Example of a vaity branding splash.
+Example of a vanity branding splash.
 
 To execute from command line (or do file):
 
