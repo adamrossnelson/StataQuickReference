@@ -117,7 +117,7 @@ Two-way tabulation with `col` option that normalizes by column | `tab year race,
 Three-way tabulation | `table year race sex` | `pd.crosstab(exfile['year'], [exfile['sex'], exfile['race']])`
 Encode a categorical (That was originally string) | `encode sex, gen(sex_cat)` | `exfile['sex_cat'] = exfile['sex'].astype('category')` <br> then <br> `exfile['sex_cat_code'] = exfile['sex_cat'].cat.codes`
 Create an array of dummies from categorical | `tab sex, gen(sex_)` | `exfile = pd.get_dummies(exfile, columns=['sex'])`
-Collapse an array of dummies back to a single categorical | StataList Post: https://www.statalist.org/forums/forum/general-stata-discussion/general/1413286-convert-dummy-variables-into-a-categorical-variable?p=1413305#post1413305 | SOF Post: https://stackoverflow.com/a/51275990/9572143
+Collapse an array of dummies back to a single categorical | StataList Post: https://www.statalist.org/forums/forum/general-stata-discussion/general/1413286-convert-dummy-variables-into-a-categorical-variable?p=1413305#post1413305 | `df[['sex_','sex_female','sex_male']].idxmax(axis='columns')` <br><br> Also, SOF Post: https://stackoverflow.com/a/51275990/9572143 
 
 Practice tip for those transitioning from Stata to Python. Where Stata lets you reference rows and columns with the very human readable optional arguments `row` and `col`, Python wants an axis number. To make Python code more human readable, possibly easier to read it is an option to declare a row and a col variable. An example that builds on the two-way tabulation examples above.
 
