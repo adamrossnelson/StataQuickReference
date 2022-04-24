@@ -112,7 +112,7 @@ Description | Stata Code | Pandas Code
 Load example data | `use http://www.stata-press.com/data/r15/hbp2.dta` | `exfile = pd.read_stata('http://www.stata-press.com/data/r15/hbp2.dta')`
 One-way tabulation | `tab year` <br> or <br> `tab race` | `exfile['year'].value_counts()` <br> or <br> `exfile['race'].value_counts()`
 Two-way tabulation | `tab year race` | `pd.crosstab(exfile['year'], exfile['race'])`
-Two-way tagulation with `row` option that normalizes by row | `tab year race, row` | `pd.crosstab(exfile['year'], exfile['race']).apply(lambda r: r/r.sum(), axis=1)`
+Two-way tagulation with `row` option that normalizes by row | `tab year race, row` | `pd.crosstab(exfile['year'], exfile['race']).apply(lambda r: r/r.sum(), axis=1)`<br><br> Also Consider `pd.pivot_table()` [Crosstab Or Pivot Table (In Pandas) Deciding When to Use Which](https://towardsdatascience.com/crosstab-or-pivot-table-in-pandas-deciding-when-to-use-which-a8ee3a9adfd0)
 Two-way tabulation with `col` option that normalizes by column | `tab year race, col` | `pd.crosstab(exfile['year'], exfile['race']).apply(lambda r: r/r.sum(), axis=0)`
 Three-way tabulation | `table year race sex` | `pd.crosstab(exfile['year'], [exfile['sex'], exfile['race']])`
 Encode a categorical (That was originally string) | `encode sex, gen(sex_cat)` | `exfile['sex_cat'] = exfile['sex'].astype('category')` <br> then <br> `exfile['sex_cat_code'] = exfile['sex_cat'].cat.codes`
