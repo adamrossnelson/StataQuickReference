@@ -348,7 +348,7 @@ foreach file in `files' {
     clear
 }
 ```
-
+**Python Version - Loop Through Files In Directory**
 ```Python
 import os
 import pandas as pd
@@ -357,6 +357,29 @@ import pandas as pd
 for filename in os.listdir():
     if filename[-4:] == '.csv':
         pd.read_csv(filename).to_stata('{}.dta'.format(filename[:-4]))
+```
+**Stata Version - Loop Through Levels Of A Categorical**
+```Stata
+sysuse auto
+
+// Use the repair record categorical as an example
+levelsof rep78, local(levels) 
+foreach lev of local levels {
+    // Preform any function specifc to each lev (summary stats for price)
+    sum price if rep78 == `lev'
+}
+```
+**Python Version - Loop Through Levels Of A Categorical**
+```Python
+import pandas as pd
+
+df = pd.read_stata('http://www.stata-press.com/data/r15/auto2.dta') 
+
+# Use the repair record categorical as an example
+for lev in df['rep78'].unique():
+    # Preform any function specifc to each lev (summary stats for price)
+    print(f'\n\nDisplay results for repair record {lev}')
+    df[df['rep78'] == lev]['price'].describe()
 ```
 
 # 5. Exporting Pandas data to Stata
