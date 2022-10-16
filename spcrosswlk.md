@@ -227,7 +227,7 @@ ue = exfile.pivot(index='id',columns='ue_idx',values='ue')
 exfile2 = pd.concat([inc,ue],axis=1).reset_index()
 
 # Gather values for varaibles that do not change over j.
-exfile_sex = DataFrame(exfile[['id','sex']])
+exfile_sex = pd.DataFrame(exfile[['id','sex']])
 exfile_sex = exfile_sex.pivot_table(index='id', values='sex').reset_index()
 
 # Merge variables that do not change over j.
