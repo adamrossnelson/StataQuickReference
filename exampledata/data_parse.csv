@@ -1,0 +1,15 @@
+Data, Description, Format
+10/31/2022, Supposed to be: October 31 2022, MM/DD/YYYY
+31/10/2022, Supposed to be: October 31 2022, DD/MM/YYYY
+10/31/22, Supposed to be: October 31 2022, MM/DD/YY
+31/10/22, Supposed to be: October 31 2022, DD/MM/YY
+10/31/2022 10:10:10000, Supposed to be: October 31 2022, MM/DD/YYYY HH:MM:SSSSS
+31/10/2022 10:10:10000, Supposed to be: October 31 2022, DD/MM/YYYY HH:MM:SSSSS
+10/31/22 10:10:10000, Supposed to be: October 31 2022, MM/DD/YY HH:MM:SSSSS
+31/10/22 10:10:10000, Supposed to be: October 31 2022, DD/MM/YY HH:MM:SSSSS
+10/31/1922 10:10:10000, Supposed to be: October 31 2022, MM/DD/YYYY HH:MM:SSSSS
+31/10/1922 10:10:10000, Supposed to be: October 31 2022, DD/MM/YYYY HH:MM:SSSSS
+1/2/2022, Supposed to be February 1 2022, M/D/YYYY
+2/1/2022, Supposed to be January 2 2022, D/M/YYYY
+01/02/2022, Supposed to be February 1 2022, MM/DD/YYYY
+02/01/2022, Supposed to be January 2 2022, DD/MM/YYYY
